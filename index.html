@@ -92,11 +92,10 @@
 
             <!-- Selector Card -->
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Select Your Operational Region</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Select Your Region</h2>
                 
-                <label for="region-select" class="block text-sm font-medium text-gray-600 mb-2">Region Briefing:</label>
                 <select id="region-select" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500 transition duration-150 ease-in-out bg-white text-lg">
-                    <option value="" disabled selected>--- Select a Region ---</option>
+                    <option value="" disabled selected>Select a Region</option>
                     <option value="sea-to-sky">Sea to Sky</option>
                     <option value="rogers-pass">Roger's Pass</option>
                     <option value="kootenays">Kootenays</option>
@@ -108,10 +107,7 @@
                 <!-- Content will be streamed here -->
             </div>
             
-            <!-- Welcome Placeholder -->
-            <div id="welcome-message" class="text-center p-12 text-gray-500 bg-white rounded-xl shadow-lg">
-                <p class="text-2xl font-light">Please select a region from the menu above to load the operational briefing.</p>
-            </div>
+          
 
             <!-- Loading Skeleton/Thinking State -->
             <div id="loading-state" class="bg-white p-6 md:p-10 rounded-xl shadow-2xl border border-gray-100 hidden">
@@ -139,31 +135,37 @@
       <!-- Header -->
       <header class="mb-8">
         <h1 class="text-3xl font-bold flex items-center gap-2">
-          🧐 Sea to Sky Comprehensive Morning Briefing
+           Sea to Sky Snow Report ❅
         </h1>
+
        <p class="text-gray-600 text-sm mt-1">
   <span class="font-semibold">Date:</span> ${dateString}<br />
   <span class="font-semibold">Issued:</span> 06:30AM PST
 </p>
 
         <p class="mt-3 text-gray-700">
-          This report synthesizes current forecast data with the past week's
-          weather and seasonal snowpack history to provide a deeper
+          This report synthesizes current forecast data with the 
+          seasonal snowpack history, and field observations  to provide a deeper
           understanding of today's conditions and hazards.
         </p>
       </header>
 
-      <!-- SECTION: Adventure Overview -->
+   <!-- SECTION: Adventure Overview -->
 <section class="mb-8 bg-white p-6 rounded-2xl shadow">
-  <h2 class="text-xl font-bold mb-2">🎿 Adventure Overview</h2>
-  <p class="mb-4 text-gray-700">
-    <strong>Purpose:</strong> A practical overview of current conditions and field logistics before
-    assessing avalanche or weather hazards.
-  </p>
-
+  <!-- Quick Summary Card -->
+  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+    <p class="font-semibold text-blue-800">🌲 Quick Take:</p>
+    <p class="mt-1 text-gray-700">
+      Access remains reasonable, with snowline gradually rising. Early season coverage and variable 
+      visibility mean slower travel — expect a mix of exploration and patience today. Bring your 
+      navigation gear, keep extra warm layers handy, and treat creek crossings and wind-loaded ridges 
+      with caution. Plan your route carefully, start early, and know your exit options to maximize 
+      safety and enjoyment.
+    </p>
+  </div>
   <!-- Current Field Conditions -->
   <div class="mb-4">
-    <h3 class="text-lg font-semibold text-blue-700 mb-1">🏔️ General Field Conditions</h3>
+    <h3 class="font-semibold mb-1">🏔️ General Field Conditions</h3>
     <ul class="list-disc pl-5 text-gray-700 space-y-1">
       <li><strong>Snowline:</strong> Continuous snow begins around <span class="font-semibold">1350 m</span>, with patchy coverage below treeline.</li>
       <li><strong>Travel:</strong> Lower access trails are icy and thin — expect mixed snow and dirt for the first 30 minutes of approach.</li>
@@ -172,9 +174,20 @@
     </ul>
   </div>
 
+  <!-- Route Planning & Timing -->
+  <div class="mb-4">
+    <h3 class="font-semibold mb-1">🗺️ Smart Route Planning & Timing</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li><strong>Recommended Elevation Band:</strong> Travel today is safest between <strong>1300–1800 m</strong>, focusing on sheltered north treeline zones.</li>
+      <li><strong>Start Early / Finish Early:</strong> Begin before peak solar warming and wind increase; aim to be off exposed terrain by midday.</li>
+      <li><strong>Exit Strategy:</strong> Prefer low-angle exits that avoid gully bottoms; tree skiing remains a reliable fallback.</li>
+      <li><strong>Navigation Hazards:</strong> Poor visibility may hide cornices, ridge transitions, or complex terrain; use GPS or map & compass backup.</li>
+    </ul>
+  </div>
+
   <!-- Equipment & Preparation -->
   <div class="mb-4">
-    <h3 class="text-lg font-semibold text-yellow-700 mb-1">🎒 Equipment & Preparation Notes</h3>
+    <h3 class="font-semibold mb-1">🎒 Equipment & Preparation Notes</h3>
     <ul class="list-disc pl-5 text-gray-700 space-y-1">
       <li>Bring <strong>ski crampons</strong> or microspikes for firm morning surfaces.</li>
       <li>Extra layers and <strong>hand warmers</strong> recommended — forecast wind chill near alpine ridges is around <strong>-20 °C</strong>.</li>
@@ -184,35 +197,17 @@
     </ul>
   </div>
 
-  <!-- Access & Logistics -->
-  <div class="mb-4">
-    <h3 class="text-lg font-semibold text-green-700 mb-1">🚗 Access & Logistics</h3>
-    <ul class="list-disc pl-5 text-gray-700 space-y-1">
-      <li>Parking lots plowed but icy — 4WD recommended beyond main trailhead.</li>
-      <li>Roadside snowbanks narrowing shoulders — limited space for shuttle vehicles.</li>
-      <li>Expect snowmobile traffic in the upper valley; practice standard backcountry sharing etiquette.</li>
-      <li>Cell coverage patchy above 1600 m — download maps for offline navigation.</li>
-    </ul>
-  </div>
 
-  <!-- Quick Summary Card -->
-  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
-    <p class="font-semibold text-blue-800">🌲 Quick Take:</p>
-    <p class="mt-1 text-gray-700">
-      Access remains reasonable, with snowline gradually rising. Early season coverage and variable 
-      visibility mean slower travel — expect a mix of exploration and patience today. Bring your 
-      navigation gear, keep extra warm layers handy, and treat creek crossings and wind-loaded ridges 
-      with caution.
-    </p>
-  </div>
 </section>
+
 
 
       <!-- Avalanche Report -->
 <section class="mb-8 bg-white p-6 rounded-2xl shadow">
-  <h2 class="text-xl font-bold mb-4">🏔️ AvCan Avalanche Report</h2>
+  <h2 class="text-xl font-bold mb-4">🏔️ Avalanche Canada Daily Report</h2>
   <p class="text-gray-700 mb-6">
-    <strong>Source:</strong> Avalanche Canada Regional Forecast <br>
+    <strong>Source:</strong> <a   target="_blank" class="ml-1 underline text-blue-600 hover:text-blue-800"
+ href="https://avalanche.ca/map?lat=51.046202&lng=-123.866206">Avalanche Canada</a> <br>
     <strong>Date:</strong> ${dateString}
   </p>
 
@@ -401,28 +396,46 @@
   </div>
 </section>
 
-<!-- SECTION: Field & Observations Analysis -->
+<!-- SECTION: Snowpack Analysis -->
 <section class="mb-8 bg-white p-6 rounded-2xl shadow">
-  <h2 class="text-xl font-bold mb-2">🧭 Field & Observations Analysis</h2>
+  <h2 class="text-xl font-bold mb-2">🧭 Snowpack Analysis</h2>
   <p class="mb-4 text-gray-700">
-    <strong>Sources:</strong> MIN Field Reports (Past 3 Days), Regional Snowpack History, Local Observations
+    <strong>Sources:</strong> MIN Field Reports from Brandywine, Duffey Lake, and Spearhead Ranges; Mountain Guide Observations; Regional Snowpack History (Sea to Sky)
   </p>
+
+<!-- Assessment Summary -->
+  <div class="mt-4 bg-red-50 border border-red-200 p-4 rounded-lg">
+    <p class="font-semibold text-red-800">⚠️ Forecaster’s Assessment:</p>
+    <p class="mt-1 text-gray-700">
+      The snowpack remains <strong>complex and spatially variable</strong>. The recent storm snow has not bonded well 
+      to older wind crusts, and the early-December weak layer remains a deep, low-probability but high-consequence problem.  
+      Human triggering remains possible on steep, wind-loaded slopes above treeline, especially near ridgelines and convex rolls.
+    </p>
+    <p class="mt-2 text-gray-700">
+      <strong>Travel advice:</strong> Stick to simple, supported terrain under 30°, avoid convexities, and treat any recent 
+      avalanche activity as a “do not cross” sign. If you’re hearing whumpfs or seeing cracks, dial it back immediately.
+    </p>
+  </div>
 
   <!-- Avalanche Activity -->
   <div class="mb-4">
     <h3 class="text-lg font-semibold text-red-700 mb-1">Recent Avalanche Activity</h3>
     <p class="text-gray-700">
-      Multiple natural and skier-triggered avalanches were reported over the past 72 hours, 
-      primarily on north and east aspects between <strong>1800–2300 m</strong>.  
-      Sizes ranged from <strong>Size 1.5 to 2.5</strong> with one notable <strong>Size 3</strong> deep release 
-      observed in the Dogtooth Range.  
+      Over the past 72 hours, multiple natural and skier-triggered avalanches have been reported across the
+      <strong>Spearhead, Fitzsimmons, and Duffey</strong> zones — primarily on north through east aspects between 
+      <strong>1800 m and 2300 m</strong>.
     </p>
     <p class="text-gray-700 mt-1">
-      Most events were <span class="font-semibold text-orange-700">wind slab (WD)</span> and 
-      <span class="font-semibold text-red-700">storm slab (ST)</span> failures.  
-      A few large avalanches stepped down to the <span class="font-semibold text-purple-700">deep persistent weak layer (DP)</span> 
-      from early December. Triggers were mostly <strong>heavy (natural)</strong> and 
-      <strong>medium (skier)</strong> loading events during the storm cycle.
+      Most slides were <span class="font-semibold text-orange-700">wind slabs (WD)</span> and 
+      <span class="font-semibold text-red-700">storm slabs (ST)</span> running on old crusts or facets.  
+      Sizes ranged from <strong>Size 1.5–2.5</strong>, with one large <strong>Size 3</strong> natural avalanche in the 
+      Spearhead back bowls stepping down to a <span class="font-semibold text-purple-700">deep persistent weak layer (DP)</span> 
+      buried in early December.  
+      Triggers were a mix of <strong>natural releases during heavy loading</strong> and 
+      <strong>human-triggered slides</strong> as the storm tapered off.
+    </p>
+    <p class="text-gray-700 mt-1 italic">
+      ➤ <strong>So what:</strong> Recent natural activity means the snowpack has proven it can fail on its own. Even though the storm has passed, those weak layers are still capable of producing large avalanches with a small human trigger.
     </p>
   </div>
 
@@ -430,42 +443,48 @@
   <div class="mb-4">
     <h3 class="text-lg font-semibold text-yellow-700 mb-1">Field Instability Signs</h3>
     <ul class="list-disc pl-5 text-gray-700 space-y-1">
-      <li>Frequent <strong>whumpfs</strong> and <strong>shooting cracks</strong> reported around treeline.</li>
-      <li><strong>Drumming</strong> sounds noted on convex features — suggestive of cohesive slab over weak facets.</li>
-      <li>Surface hoar still present and preserved on shaded, sheltered slopes below 1800 m.</li>
-      <li>Loose dry (LD) sluffing observed on steep north aspects; fast running but shallow.</li>
+      <li>Frequent <strong>whumpfs</strong> and <strong>shooting cracks</strong> near treeline in the <strong>Brandywine</strong> zone.</li>
+      <li><strong>Drumming</strong> sounds noted on convex rolls in <strong>Rendezvous and Flute</strong> — a clear indicator of a hard slab over a weak layer of facets.</li>
+      <li>Preserved <strong>surface hoar</strong> (up to 6 mm) below 1800 m in shaded areas of the <strong>Duffey corridor</strong>.</li>
+      <li>Loose dry (LD) sluffing observed on steep north aspects in the <strong>Musical Bumps</strong> area — fast running but shallow.</li>
     </ul>
+    <p class="text-gray-700 mt-1 italic">
+      ➤ <strong>So what:</strong> Whumpfs and cracks are direct warnings that weak layers are collapsing under light loads — a strong sign that human-triggered avalanches remain possible today.
+    </p>
   </div>
 
   <!-- Test Results -->
   <div class="mb-4">
     <h3 class="text-lg font-semibold text-blue-700 mb-1">Snowpack Test Results</h3>
     <p class="text-gray-700">
-      Stability tests indicate a <strong>moderate to high reactivity</strong> on buried surface hoar and faceted layers:
+      Pits dug in the <strong>Spearhead and Duffey</strong> zones show <strong>moderate to high reactivity</strong> on buried surface hoar and faceted layers:
     </p>
     <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
-      <li><strong>Compression Tests:</strong> CT12–CT18 (moderate sudden planar) on 35–45 cm down wind slab.</li>
-      <li><strong>ECT:</strong> ECTP16 (propagating) on 65 cm depth persistent facet layer.</li>
-      <li><strong>Deep Layer (DPWL):</strong> ECTX in most pits, though one ECTP25 observed near alpine ridge, confirming spatial variability.</li>
+      <li><strong>Compression Tests:</strong> CT12–CT18 (moderate sudden planar) 35–45 cm down in the wind slab.  
+        <span class="italic">➡ Indicates the upper snowpack can fracture under a skier’s weight, especially on convex features.</span>
+      </li>
+      <li><strong>ECT:</strong> ECTP16 (propagating) on a 65 cm-deep persistent facet layer.  
+        <span class="italic">➡ Propagation means once it fails, the crack can travel — supporting larger avalanches.</span>
+      </li>
+      <li><strong>Deep Layer (DPWL):</strong> ECTX in most pits, but one ECTP25 near <strong>Decker Glacier</strong> confirms spatial variability.  
+        <span class="italic">➡ This deep layer isn’t failing everywhere, but where it does, avalanches could be destructive.</span>
+      </li>
     </ul>
   </div>
 
-  <!-- Assessment Summary -->
-  <div class="mt-4 bg-red-50 border border-red-200 p-4 rounded-lg">
-    <p class="font-semibold text-red-800">⚠️ Forecaster’s Assessment:</p>
-    <p class="mt-1 text-gray-700">
-      The snowpack remains <strong>complex and spatially variable</strong>. Recent storm snow has not bonded well 
-      to the old wind crust, and deep weak layers remain a low-probability but high-consequence concern. 
-      Human triggering remains possible on steep, wind-loaded slopes above treeline.
-    </p>
-    <p class="mt-2 text-gray-700">
-      Best travel strategy: <strong>conservative terrain choices</strong>, avoid convex rollovers, 
-      and be alert for signs of instability like whumpfs or recent avalanches on similar aspects.
+
+
+  <!-- Seasonal Context -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-purple-700 mb-1">Seasonal Considerations</h3>
+    <p class="text-gray-700">
+      We are currently in the <strong>early season</strong>, meaning snow coverage is patchy below treeline and weak layers from last year remain buried but often exposed in isolated pockets.  
+      <strong>Advice:</strong> Stick to conservative terrain choices, favor lower-angle, well-supported slopes, and give extra buffer around persistent weak layers. Early season snowpacks are unpredictable — what holds in one bowl may fail in another.
     </p>
   </div>
+
+  
 </section>
-
-
 <!-- SECTION: Forecasted Weather -->
 <section class="mb-8 bg-white p-6 rounded-2xl shadow">
   <h2 class="text-xl font-bold mb-2">🌤️ Forecasted Weather</h2>
@@ -473,58 +492,153 @@
     <strong>Sources:</strong> Snow-Forecast, SpotWX GDPS (10-Day, 15 km resolution)
   </p>
 
-  <div class="overflow-x-auto">
-    <table class="min-w-full text-sm border border-gray-300 rounded-lg">
-      <tbody>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50 w-1/3">Precip</td>
-          <td class="p-2 text-blue-700 font-medium">S2 (Moderate Snow)</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50">Accum</td>
-          <td class="p-2 text-red-600 font-semibold">&gt;40 cm (Heavy Loading)</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50">Wind Speed</td>
-          <td class="p-2 text-orange-600 font-semibold">Strong</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50">Wind Dir</td>
-          <td class="p-2 text-gray-700">SW</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50">Max Temp</td>
-          <td class="p-2 text-amber-700 font-semibold">Rapid Rise</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2 font-semibold bg-gray-50">Solar Radiation</td>
-          <td class="p-2 text-red-700 font-semibold">Strong ☀️</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Morning Forecast -->
+  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+    <p class="font-semibold text-blue-800">🌅 Morning (6 AM – 10 AM):</p>
+    <p class="mt-1 text-gray-700">
+      Snow continues with moderate accumulation; winds are building from the southwest but remain manageable. 
+      Cold temperatures keep the upper snowpack firm, providing more stable travel conditions on early slopes. 
+      Optimal time for uphill travel or reconnaissance before significant loading occurs.
+    </p>
+    <!-- Morning Table -->
+    <div class="overflow-x-auto mt-2">
+      <table class="min-w-full text-sm border border-gray-300 rounded-lg">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50 w-1/3">Precip</td>
+            <td class="p-2 text-blue-700 font-medium">S1 (Light Snow)</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Accum</td>
+            <td class="p-2 text-red-600 font-semibold">10–20 cm</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Speed</td>
+            <td class="p-2 text-orange-600 font-semibold">Moderate</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Dir</td>
+            <td class="p-2 text-gray-700">SW</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Max Temp</td>
+            <td class="p-2 text-amber-700 font-semibold">Stable Cold</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Solar Radiation</td>
+            <td class="p-2 text-red-700 font-semibold">Low 🌥️</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
+  <!-- Daytime Forecast -->
   <div class="mt-4 bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-    <p class="font-semibold text-yellow-800">⚠️ Forecast Synopsis:</p>
+    <p class="font-semibold text-yellow-800">🌞 Daytime (10 AM – 4 PM):</p>
     <p class="mt-1 text-gray-700">
-      Heavy snowfall and strong southwest winds expected through tonight will 
-      rapidly build new wind slabs. A rapid temperature rise and strong solar 
-      input tomorrow could lead to natural avalanches on steep solar aspects.
+      Heavy snowfall and strong southwest winds continue, rapidly building wind slabs on leeward slopes. 
+      Rising temperatures and increasing solar radiation will weaken surface layers, especially on south- and west-facing aspects. 
+      Avalanche hazard is expected to peak during midday warming — minimize exposure on steep terrain.
     </p>
-    <p class="mt-2 text-gray-700">
-      Expect elevated hazard during midday warming — plan travel for early 
-      morning or after cooling.
-    </p>
+    <!-- Daytime Table -->
+    <div class="overflow-x-auto mt-2">
+      <table class="min-w-full text-sm border border-gray-300 rounded-lg">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50 w-1/3">Precip</td>
+            <td class="p-2 text-blue-700 font-medium">S2 (Moderate Snow)</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Accum</td>
+            <td class="p-2 text-red-600 font-semibold">30–50 cm</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Speed</td>
+            <td class="p-2 text-orange-600 font-semibold">Strong</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Dir</td>
+            <td class="p-2 text-gray-700">SW</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Max Temp</td>
+            <td class="p-2 text-amber-700 font-semibold">Rapid Rise</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Solar Radiation</td>
+            <td class="p-2 text-red-700 font-semibold">Strong ☀️</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <!-- Evening Forecast -->
+  <div class="mt-4 bg-purple-50 border border-purple-200 p-4 rounded-lg">
+    <p class="font-semibold text-purple-800">🌇 Evening (4 PM – 10 PM):</p>
+    <p class="mt-1 text-gray-700">
+      Snow tapers off in most areas, winds begin to ease. Cooling temperatures stabilize the upper snowpack slightly, 
+      but recently deposited wind slabs remain sensitive. Night travel should be limited to low-angle, supported terrain 
+      with caution around previously loaded slopes.
+    </p>
+    <!-- Evening Table -->
+    <div class="overflow-x-auto mt-2">
+      <table class="min-w-full text-sm border border-gray-300 rounded-lg">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50 w-1/3">Precip</td>
+            <td class="p-2 text-blue-700 font-medium">S1 (Light Snow)</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Accum</td>
+            <td class="p-2 text-red-600 font-semibold">5–15 cm</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Speed</td>
+            <td class="p-2 text-orange-600 font-semibold">Moderate</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Wind Dir</td>
+            <td class="p-2 text-gray-700">SW</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Max Temp</td>
+            <td class="p-2 text-amber-700 font-semibold">Cooling</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold bg-gray-50">Solar Radiation</td>
+            <td class="p-2 text-red-700 font-semibold">Low 🌙</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </section>
 
-      <!-- SECTION: Risk Management Planning -->
+
+<!-- SECTION: Risk Management Planning -->
 <section class="mb-8 bg-white p-6 rounded-2xl shadow">
   <h2 class="text-xl font-bold mb-2">🧭 Risk Management Planning</h2>
   <p class="mb-4 text-gray-700">
     <strong>Objective:</strong> Apply field observations and forecast data to 
     manage exposure to avalanche terrain and reduce uncertainty during travel.
   </p>
+
+ <!-- Summary -->
+  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+    <p class="font-semibold text-blue-800">🔍 Risk Summary:</p>
+    <p class="mt-1 text-gray-700">
+      Expect a mix of reactive wind and storm slabs with lingering deep instabilities.  
+      Safe travel remains possible in well-supported, low-angle terrain and forested features.  
+      Avoid exposure to large alpine slopes until new snow stabilizes and temperatures drop.
+    </p>
+    <p class="mt-2 text-gray-700">
+      Prioritize communication, spacing, and a shared understanding of escape plans. 
+      <strong>Patience and awareness are your best tools today.</strong>
+    </p>
+  </div>
 
   <!-- Terrain Avoidance -->
   <div class="mb-4">
@@ -587,19 +701,7 @@
     </ul>
   </div>
 
-  <!-- Summary -->
-  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
-    <p class="font-semibold text-blue-800">🔍 Forecaster’s Summary:</p>
-    <p class="mt-1 text-gray-700">
-      Expect a mix of reactive wind and storm slabs with lingering deep instabilities.  
-      Safe travel remains possible in well-supported, low-angle terrain and forested features.  
-      Avoid exposure to large alpine slopes until new snow stabilizes and temperatures drop.
-    </p>
-    <p class="mt-2 text-gray-700">
-      Prioritize communication, spacing, and a shared understanding of escape plans. 
-      <strong>Patience and awareness are your best tools today.</strong>
-    </p>
-  </div>
+ 
 </section>
 
     </div>  
@@ -743,7 +845,6 @@
         // --- 4. Main Event Listener & Logic ---
         document.addEventListener('DOMContentLoaded', () => {
             const reportOutput = document.getElementById('report-output');
-            const welcomeMessage = document.getElementById('welcome-message');
             const loadingState = document.getElementById('loading-state');
 
             // Initialize the date component to today
@@ -763,7 +864,6 @@
                 
                 // 1. Hide/Clear everything initially
                 reportOutput.classList.add('hidden');
-                welcomeMessage.classList.add('hidden');
                 loadingState.classList.add('hidden');
                 reportOutput.innerHTML = ''; 
 
@@ -788,14 +888,13 @@
                     // Show a message for future regions
                     reportOutput.innerHTML = `
                         <div class="text-center p-8 text-gray-600 bg-yellow-50 rounded-lg">
-                            <h4 class="text-2xl font-semibold text-yellow-700">Content Not Ready Yet 🚧</h4>
+                            <h4 class="text-2xl font-semibold text-yellow-700">Come back soon! 🚧</h4>
                             <p class="mt-2">Briefings for <strong>${selectedRegion.toUpperCase().replace('-', ' ')}</strong> are not yet available!</p>
                         </div>
                     `;
                     reportOutput.classList.remove('hidden');
                 } else {
-                    // Re-show the welcome message 
-                    welcomeMessage.classList.remove('hidden');
+                    
                 }
             }
 
