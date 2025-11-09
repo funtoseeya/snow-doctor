@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Doctor - Avalanche Briefing App</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and presentation */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f9;
+        }
+        .report-container h3 {
+            font-size: 1.5rem; /* Larger headers for sections */
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .report-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        /* Style for table cells */
+        .report-container th, .report-container td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        /* Mobile-friendly table overflow */
+        .overflow-x-auto {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Loading/Skeleton Styles */
+        .skeleton-line {
+            height: 1.25rem;
+            margin-bottom: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        .loading-dot {
+            animation: dot-pulse 1.5s infinite ease-in-out;
+            display: inline-block;
+            margin-left: 2px;
+        }
+        .loading-dot:nth-child(2) { animation-delay: 0.3s; }
+        .loading-dot:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header -->
+        <header class="w-full bg-sky-800 text-white shadow-xl p-6 mb-8">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-extrabold tracking-tight">
+                    <span class="text-sky-300">SNOW</span>DOCTOR 🏔️
+                </h1>
+                <p class="text-sky-200 mt-1">Actionable Intelligence for Safe Mountain Travel</p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="w-full max-w-4xl px-4 pb-12">
+            
+            <!-- Date Picker Component -->
+            <div class="bg-white p-4 md:p-6 rounded-xl shadow-md border border-gray-200 mb-4 flex justify-between items-center">
+                <button id="prev-day-button" class="px-4 py-2 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-700 transition duration-150 ease-in-out">
+                    ← Previous Day
+                </button>
+                <div class="flex flex-col items-center mx-4">
+                    <span class="text-xs font-semibold text-gray-500 uppercase">Current Briefing Date</span>
+                    <span id="current-date-display" class="text-2xl font-extrabold text-gray-800"></span>
+                    <input type="date" id="date-picker-input" class="hidden" max="">
+                </div>
+                <button id="next-day-button" disabled class="px-4 py-2 bg-gray-300 text-gray-500 font-bold rounded-lg cursor-not-allowed">
+                    Next Day →
+                </button>
+            </div>
+
+            <!-- Selector Card -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Select Your Operational Region</h2>
+                
+                <label for="region-select" class="block text-sm font-medium text-gray-600 mb-2">Region Briefing:</label>
+                <select id="region-select" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500 transition duration-150 ease-in-out bg-white text-lg">
+                    <option value="" disabled selected>--- Select a Region ---</option>
+                    <option value="sea-to-sky">Sea to Sky</option>
+                    <option value="rogers-pass">Roger's Pass</option>
+                    <option value="kootenays">Kootenays</option>
+                </select>
+            </div>
+
+            <!-- Report Output Area -->
+            <div id="report-output" class="report-container bg-white p-6 md:p-10 rounded-xl shadow-2xl border border-gray-100 hidden">
+                <!-- Content will be streamed here -->
+            </div>
+            
+            <!-- Welcome Placeholder -->
+            <div id="welcome-message" class="text-center p-12 text-gray-500 bg-white rounded-xl shadow-lg">
+                <p class="text-2xl font-light">Please select a region from the menu above to load the operational briefing.</p>
+            </div>
+
+            <!-- Loading Skeleton/Thinking State -->
+            <div id="loading-state" class="bg-white p-6 md:p-10 rounded-xl shadow-2xl border border-gray-100 hidden">
+                <p class="text-xl font-semibold text-sky-600 mb-4">
+                    Synthesizing historical data and forecast models 
+                    <span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span>
+                </p>
+                <div class="space-y-3 pt-4">
+                    <div class="skeleton-line w-3/4"></div>
+                    <div class="skeleton-line w-11/12"></div>
+                    <div class="skeleton-line w-2/3"></div>
+                    <div class="skeleton-line w-10/12"></div>
+                    <div class="skeleton-line w-4/5"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // --- 1. Data Definition (RICH, SYNTHESIZED MARKUP) ---
+
+        const seaToSkyReport = (dateString) => `
+        <div class="max-w-4xl mx-auto p-6">
+      <!-- Header -->
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold flex items-center gap-2">
+          🧐 Sea to Sky Comprehensive Morning Briefing
+        </h1>
+       <p class="text-gray-600 text-sm mt-1">
+  <span class="font-semibold">Date:</span> ${dateString}<br />
+  <span class="font-semibold">Issued:</span> 06:30AM PST
+</p>
+
+        <p class="mt-3 text-gray-700">
+          This report synthesizes current forecast data with the past week's
+          weather and seasonal snowpack history to provide a deeper
+          understanding of today's conditions and hazards.
+        </p>
+      </header>
+
+      <!-- SECTION: Adventure Overview -->
+<section class="mb-8 bg-white p-6 rounded-2xl shadow">
+  <h2 class="text-xl font-bold mb-2">🎿 Adventure Overview</h2>
+  <p class="mb-4 text-gray-700">
+    <strong>Purpose:</strong> A practical overview of current conditions and field logistics before
+    assessing avalanche or weather hazards.
+  </p>
+
+  <!-- Current Field Conditions -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-blue-700 mb-1">🏔️ General Field Conditions</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li><strong>Snowline:</strong> Continuous snow begins around <span class="font-semibold">1350 m</span>, with patchy coverage below treeline.</li>
+      <li><strong>Travel:</strong> Lower access trails are icy and thin — expect mixed snow and dirt for the first 30 minutes of approach.</li>
+      <li><strong>Surface Conditions:</strong> Soft storm snow above treeline; wind-affected ridges with thin crusts on exposed features.</li>
+      <li><strong>Visibility:</strong> Broken clouds and occasional white-out periods; carry navigation aids if traveling above 1800 m.</li>
+    </ul>
+  </div>
+
+  <!-- Equipment & Preparation -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-yellow-700 mb-1">🎒 Equipment & Preparation Notes</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li>Bring <strong>ski crampons</strong> or microspikes for firm morning surfaces.</li>
+      <li>Extra layers and <strong>hand warmers</strong> recommended — forecast wind chill near alpine ridges is around <strong>-20 °C</strong>.</li>
+      <li><strong>Headlamp and spare batteries</strong> advised — daylight fades quickly by 4:30 PM.</li>
+      <li>Snow bridges over creeks are <strong>thin and collapsing</strong> — plan alternate crossings.</li>
+      <li>If camping or overnighting, ensure <strong>secure tent anchoring</strong> and storm-ready setup (winds increasing overnight).</li>
+    </ul>
+  </div>
+
+  <!-- Access & Logistics -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-green-700 mb-1">🚗 Access & Logistics</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li>Parking lots plowed but icy — 4WD recommended beyond main trailhead.</li>
+      <li>Roadside snowbanks narrowing shoulders — limited space for shuttle vehicles.</li>
+      <li>Expect snowmobile traffic in the upper valley; practice standard backcountry sharing etiquette.</li>
+      <li>Cell coverage patchy above 1600 m — download maps for offline navigation.</li>
+    </ul>
+  </div>
+
+  <!-- Quick Summary Card -->
+  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+    <p class="font-semibold text-blue-800">🌲 Quick Take:</p>
+    <p class="mt-1 text-gray-700">
+      Access remains reasonable, with snowline gradually rising. Early season coverage and variable 
+      visibility mean slower travel — expect a mix of exploration and patience today. Bring your 
+      navigation gear, keep extra warm layers handy, and treat creek crossings and wind-loaded ridges 
+      with caution.
+    </p>
+  </div>
+</section>
+
+
+      <!-- Avalanche Report -->
+<section class="mb-8 bg-white p-6 rounded-2xl shadow">
+  <h2 class="text-xl font-bold mb-4">🏔️ AvCan Avalanche Report</h2>
+  <p class="text-gray-700 mb-6">
+    <strong>Source:</strong> Avalanche Canada Regional Forecast <br>
+    <strong>Date:</strong> ${dateString}
+  </p>
+
+  <!-- Section 1: Danger Ratings -->
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-2">Danger Ratings</h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm border border-gray-300">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 text-left">Elevation Band</th>
+            <th class="p-2 text-left">Danger Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2">Alpine</td>
+            <td class="p-2 text-red-600 font-semibold">High</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2">Treeline</td>
+            <td class="p-2 text-orange-500 font-semibold">Considerable</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2">Below Treeline</td>
+            <td class="p-2 text-yellow-600 font-semibold">Moderate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Travel & Terrain Advice -->
+    <div class="mt-4 bg-yellow-50 border border-yellow-200 p-4 rounded-lg text-sm">
+      <p class="font-semibold text-yellow-800">Travel and Terrain Advice:</p>
+      <ul class="list-disc pl-5 mt-1 text-gray-700 space-y-1">
+        <li>Watch for newly formed wind slabs near ridge crests and in open alpine features.</li>
+        <li>Give cornices a wide berth — several large natural releases were observed yesterday.</li>
+        <li>Travel conservatively; persistent slab problems may linger on shaded slopes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 2: Avalanche Problems -->
+  <div class="mb-8">
+    <h3 class="text-lg font-semibold mb-4">Avalanche Problems</h3>
+
+    <!-- Problem 1 -->
+    <div class="mb-4 border border-gray-300 rounded-xl overflow-hidden">
+      <div class="bg-gray-100 px-4 py-2 font-semibold">Wind Slab</div>
+      <table class="w-full text-sm">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold w-1/3">Elevation:</td>
+            <td class="p-2">Treeline and Alpine</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Aspects:</td>
+            <td class="p-2">N–E–S aspects, leeward slopes</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Likelihood of Avalanches:</td>
+            <td class="p-2">Likely — Human triggered avalanches expected</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Expected Size:</td>
+            <td class="p-2">1.5 – 2.5 (small to large)</td>
+          </tr>
+          <tr class="border-t bg-blue-50">
+            <td class="p-2 font-semibold">Comments:</td>
+            <td class="p-2">
+              Fresh wind slabs are forming rapidly in lee terrain features. 
+              Avoid steep convex rolls and unsupported slopes above treeline.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="mb-4 border border-gray-300 rounded-xl overflow-hidden">
+      <div class="bg-gray-100 px-4 py-2 font-semibold">Persistent Slab</div>
+      <table class="w-full text-sm">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold w-1/3">Elevation:</td>
+            <td class="p-2">All elevations</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Aspects:</td>
+            <td class="p-2">Primarily shaded slopes (NW–N–NE)</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Likelihood of Avalanches:</td>
+            <td class="p-2">Possible — Human triggering remains possible</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Expected Size:</td>
+            <td class="p-2">2 – 3 (large to very large)</td>
+          </tr>
+          <tr class="border-t bg-blue-50">
+            <td class="p-2 font-semibold">Comments:</td>
+            <td class="p-2">
+              The early-December facet layer persists in the upper meter of the snowpack. 
+              Several remotely triggered avalanches were reported earlier this week.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="border border-gray-300 rounded-xl overflow-hidden">
+      <div class="bg-gray-100 px-4 py-2 font-semibold">Cornice</div>
+      <table class="w-full text-sm">
+        <tbody>
+          <tr class="border-t">
+            <td class="p-2 font-semibold w-1/3">Elevation:</td>
+            <td class="p-2">Alpine only</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Aspects:</td>
+            <td class="p-2">N–E–W ridge lines</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Likelihood of Avalanches:</td>
+            <td class="p-2">Unlikely — but large cornice failures possible with solar input</td>
+          </tr>
+          <tr class="border-t">
+            <td class="p-2 font-semibold">Expected Size:</td>
+            <td class="p-2">2 – 3 (large)</td>
+          </tr>
+          <tr class="border-t bg-blue-50">
+            <td class="p-2 font-semibold">Comments:</td>
+            <td class="p-2">
+              Cornices remain large and fragile. Give ridge crests a wide margin, especially 
+              during daytime warming.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 3: Details -->
+  <div>
+    <h3 class="text-lg font-semibold mb-3">Details</h3>
+
+    <!-- Avalanche Summary -->
+    <div class="mb-4">
+      <p class="font-semibold text-gray-800">Avalanche Summary:</p>
+      <p class="text-gray-700 mt-1 text-sm">
+        Widespread natural and human-triggered avalanches were observed across the region over the past 48 hours,
+        primarily as wind slab and storm slab failures at treeline and alpine elevations. 
+        Several size 2 avalanches were reported in the north-facing alpine terrain near Blue River.
+      </p>
+    </div>
+
+    <!-- Snowpack Summary -->
+    <div class="mb-4">
+      <p class="font-semibold text-gray-800">Snowpack Summary:</p>
+      <p class="text-gray-700 mt-1 text-sm">
+        The upper snowpack consists of multiple wind-affected layers over a mid-December crust. 
+        A weak faceted layer persists 80–120 cm deep, producing sudden planar results in stability tests. 
+        The snowpack is generally stronger in sheltered treeline areas.
+      </p>
+    </div>
+
+    <!-- Weather Forecast -->
+    <div class="mb-4">
+      <p class="font-semibold text-gray-800">Weather Forecast:</p>
+      <p class="text-gray-700 mt-1 text-sm">
+        Expect 10–20 cm of new snow overnight with strong southwest winds (40–60 km/h). 
+        Freezing levels rising to 1500 m by Saturday. 
+        Sunday brings clearing skies and a temperature inversion.
+      </p>
+    </div>
+
+    <!-- Confidence -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm">
+      <p class="font-semibold text-blue-800">Confidence:</p>
+      <p class="text-gray-700 mt-1">
+        Moderate — Forecast confidence is reduced due to limited field observations 
+        in high alpine terrain following the recent storm cycle.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: Field & Observations Analysis -->
+<section class="mb-8 bg-white p-6 rounded-2xl shadow">
+  <h2 class="text-xl font-bold mb-2">🧭 Field & Observations Analysis</h2>
+  <p class="mb-4 text-gray-700">
+    <strong>Sources:</strong> MIN Field Reports (Past 3 Days), Regional Snowpack History, Local Observations
+  </p>
+
+  <!-- Avalanche Activity -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-red-700 mb-1">Recent Avalanche Activity</h3>
+    <p class="text-gray-700">
+      Multiple natural and skier-triggered avalanches were reported over the past 72 hours, 
+      primarily on north and east aspects between <strong>1800–2300 m</strong>.  
+      Sizes ranged from <strong>Size 1.5 to 2.5</strong> with one notable <strong>Size 3</strong> deep release 
+      observed in the Dogtooth Range.  
+    </p>
+    <p class="text-gray-700 mt-1">
+      Most events were <span class="font-semibold text-orange-700">wind slab (WD)</span> and 
+      <span class="font-semibold text-red-700">storm slab (ST)</span> failures.  
+      A few large avalanches stepped down to the <span class="font-semibold text-purple-700">deep persistent weak layer (DP)</span> 
+      from early December. Triggers were mostly <strong>heavy (natural)</strong> and 
+      <strong>medium (skier)</strong> loading events during the storm cycle.
+    </p>
+  </div>
+
+  <!-- Signs of Instability -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-yellow-700 mb-1">Field Instability Signs</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li>Frequent <strong>whumpfs</strong> and <strong>shooting cracks</strong> reported around treeline.</li>
+      <li><strong>Drumming</strong> sounds noted on convex features — suggestive of cohesive slab over weak facets.</li>
+      <li>Surface hoar still present and preserved on shaded, sheltered slopes below 1800 m.</li>
+      <li>Loose dry (LD) sluffing observed on steep north aspects; fast running but shallow.</li>
+    </ul>
+  </div>
+
+  <!-- Test Results -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-blue-700 mb-1">Snowpack Test Results</h3>
+    <p class="text-gray-700">
+      Stability tests indicate a <strong>moderate to high reactivity</strong> on buried surface hoar and faceted layers:
+    </p>
+    <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
+      <li><strong>Compression Tests:</strong> CT12–CT18 (moderate sudden planar) on 35–45 cm down wind slab.</li>
+      <li><strong>ECT:</strong> ECTP16 (propagating) on 65 cm depth persistent facet layer.</li>
+      <li><strong>Deep Layer (DPWL):</strong> ECTX in most pits, though one ECTP25 observed near alpine ridge, confirming spatial variability.</li>
+    </ul>
+  </div>
+
+  <!-- Assessment Summary -->
+  <div class="mt-4 bg-red-50 border border-red-200 p-4 rounded-lg">
+    <p class="font-semibold text-red-800">⚠️ Forecaster’s Assessment:</p>
+    <p class="mt-1 text-gray-700">
+      The snowpack remains <strong>complex and spatially variable</strong>. Recent storm snow has not bonded well 
+      to the old wind crust, and deep weak layers remain a low-probability but high-consequence concern. 
+      Human triggering remains possible on steep, wind-loaded slopes above treeline.
+    </p>
+    <p class="mt-2 text-gray-700">
+      Best travel strategy: <strong>conservative terrain choices</strong>, avoid convex rollovers, 
+      and be alert for signs of instability like whumpfs or recent avalanches on similar aspects.
+    </p>
+  </div>
+</section>
+
+
+<!-- SECTION: Forecasted Weather -->
+<section class="mb-8 bg-white p-6 rounded-2xl shadow">
+  <h2 class="text-xl font-bold mb-2">🌤️ Forecasted Weather</h2>
+  <p class="mb-4 text-gray-700">
+    <strong>Sources:</strong> Snow-Forecast, SpotWX GDPS (10-Day, 15 km resolution)
+  </p>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full text-sm border border-gray-300 rounded-lg">
+      <tbody>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50 w-1/3">Precip</td>
+          <td class="p-2 text-blue-700 font-medium">S2 (Moderate Snow)</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50">Accum</td>
+          <td class="p-2 text-red-600 font-semibold">&gt;40 cm (Heavy Loading)</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50">Wind Speed</td>
+          <td class="p-2 text-orange-600 font-semibold">Strong</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50">Wind Dir</td>
+          <td class="p-2 text-gray-700">SW</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50">Max Temp</td>
+          <td class="p-2 text-amber-700 font-semibold">Rapid Rise</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2 font-semibold bg-gray-50">Solar Radiation</td>
+          <td class="p-2 text-red-700 font-semibold">Strong ☀️</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4 bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+    <p class="font-semibold text-yellow-800">⚠️ Forecast Synopsis:</p>
+    <p class="mt-1 text-gray-700">
+      Heavy snowfall and strong southwest winds expected through tonight will 
+      rapidly build new wind slabs. A rapid temperature rise and strong solar 
+      input tomorrow could lead to natural avalanches on steep solar aspects.
+    </p>
+    <p class="mt-2 text-gray-700">
+      Expect elevated hazard during midday warming — plan travel for early 
+      morning or after cooling.
+    </p>
+  </div>
+</section>
+
+      <!-- SECTION: Risk Management Planning -->
+<section class="mb-8 bg-white p-6 rounded-2xl shadow">
+  <h2 class="text-xl font-bold mb-2">🧭 Risk Management Planning</h2>
+  <p class="mb-4 text-gray-700">
+    <strong>Objective:</strong> Apply field observations and forecast data to 
+    manage exposure to avalanche terrain and reduce uncertainty during travel.
+  </p>
+
+  <!-- Terrain Avoidance -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-red-700 mb-1">⛔ Terrain to Avoid</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li>
+        <strong>Start Zones:</strong> Avoid steep (>30°) lee-loaded start zones, 
+        particularly on <span class="font-semibold text-purple-700">NE–E–SE aspects</span> near and above treeline.
+      </li>
+      <li>
+        <strong>Convex & Unsupported Slopes:</strong> Highly suspect — avoid convex rolls 
+        and features unsupported from below (e.g., cliff bands, gullies).
+      </li>
+      <li>
+        <strong>Runout & Avalanche Paths:</strong> Stay out of obvious paths 
+        and runout zones; strong warming or solar effect could trigger delayed natural slides.
+      </li>
+      <li>
+        <strong>Sunny & Loaded Slopes:</strong> Rapid warming and strong solar 
+        radiation could produce loose wet (LW) and storm slab (ST) releases on S and SW aspects.
+      </li>
+      <li>
+        <strong>Large Terrain Features:</strong> Avoid committing to 
+        <span class="font-semibold text-red-600">big alpine faces</span> or multiple connected slopes.
+      </li>
+      <li>
+        <strong>Overhead Hazards:</strong> Watch for cornices, rockfall, and glide cracks 
+        that could trigger avalanches from above.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Uncertainty & Data Gaps -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-yellow-700 mb-1">⚠️ Key Uncertainties</h3>
+    <p class="text-gray-700">
+      Confidence today is <strong>moderate</strong>. We lack detailed recent field observations 
+      from the alpine, especially on shaded north aspects where the 
+      <span class="font-semibold text-purple-700">deep persistent layer (DP)</span> 
+      has shown intermittent reactivity.  
+      Variability in bonding between the storm snow and Dec 31 rain crust 
+      adds further uncertainty — conditions may change rapidly with warming or additional loading.
+    </p>
+    <p class="mt-1 text-gray-700">
+      We do not yet know if the recent storm snow has fully settled; expect 
+      <strong>localized surprise reactivity</strong> even in areas that appear calm.
+    </p>
+  </div>
+
+  <!-- Group Management -->
+  <div class="mb-4">
+    <h3 class="text-lg font-semibold text-blue-700 mb-1">👥 Group Management Recommendations</h3>
+    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+      <li><strong>Travel One at a Time:</strong> Especially across open slopes, convexities, and suspect start zones.</li>
+      <li><strong>Use Protective Terrain:</strong> Trees and dense forest below treeline remain good travel options — keep groups spaced and communication clear.</li>
+      <li><strong>Spot Safe Islands:</strong> Identify and regroup in safe terrain with no overhead exposure.</li>
+      <li><strong>Continuous Assessment:</strong> Re-evaluate slope angles and snow behavior as you gain elevation — conditions are dynamic.</li>
+      <li><strong>Plan Exits:</strong> Have clear escape lines and avoid terrain traps like gullies or creek beds.</li>
+      <li><strong>Conservative Mindset:</strong> Today’s complexity favors restraint — choose smaller slopes and short pitches.</li>
+    </ul>
+  </div>
+
+  <!-- Summary -->
+  <div class="mt-4 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+    <p class="font-semibold text-blue-800">🔍 Forecaster’s Summary:</p>
+    <p class="mt-1 text-gray-700">
+      Expect a mix of reactive wind and storm slabs with lingering deep instabilities.  
+      Safe travel remains possible in well-supported, low-angle terrain and forested features.  
+      Avoid exposure to large alpine slopes until new snow stabilizes and temperatures drop.
+    </p>
+    <p class="mt-2 text-gray-700">
+      Prioritize communication, spacing, and a shared understanding of escape plans. 
+      <strong>Patience and awareness are your best tools today.</strong>
+    </p>
+  </div>
+</section>
+
+    </div>  
+        `
+
+        // --- 2. Utility Functions ---
+        
+        /**
+         * Parses simple Markdown for bold/italic and replaces LaTeX/special characters.
+         * @param {string} rawText - The text containing markdown and special characters.
+         * @returns {string} The formatted HTML string.
+         */
+        function parseContent(rawText) {
+            let htmlText = rawText;
+
+            // 1. Replace all LaTeX/weird characters with standard characters
+            // Replace degrees (e.g., 30^\circ)
+            htmlText = htmlText.replace(/(\d+)\^\circ/g, '$1°'); 
+            // Replace meters (e.g., \text{ m})
+            htmlText = htmlText.replace(/\\text\{ m\}/g, ' m').replace(/\\text\{m\}/g, 'm'); 
+            // Clean up any remaining backslashes or dollar signs
+            htmlText = htmlText.replace(/[\$\\]/g, ''); 
+
+            // 2. Simple Markdown parser
+            // Italic: *text* (must run before bold to avoid double-wrapping)
+            htmlText = htmlText.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Bold: **text**
+            htmlText = htmlText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            return htmlText;
+        }
+
+        /**
+         * Simulates a "streaming" or "thinking" effect by incrementally rendering HTML content.
+         * @param {HTMLElement} element - The target element to append content to.
+         * @param {string} content - The full HTML content string to stream.
+         */
+        function streamContent(element, content) {
+            // Split the content into chunks (words or small HTML blocks)
+            const chunks = content.match(/(<[^>]+>|[^<>\s]+)/g) || [];
+            let index = 0;
+            const delay = 15; // Delay in milliseconds per chunk/word
+
+            element.innerHTML = '';
+
+            function appendNextChunk() {
+                if (index < chunks.length) {
+                    const chunk = chunks[index];
+                    
+                    // Logic to handle spacing correctly when streaming non-HTML text
+                    const lastChar = element.innerHTML.slice(-1);
+                    const isPrevTag = lastChar === '>';
+
+                    if (chunk.match(/^[a-zA-Z0-9]/) && !isPrevTag) {
+                        element.innerHTML += ' ';
+                    }
+
+                    element.innerHTML += chunk;
+                    index++;
+                    
+                    // Scroll to bottom if content exceeds view height
+                    if (element.scrollHeight > element.clientHeight) {
+                        element.scrollTop = element.scrollHeight;
+                    }
+
+                    setTimeout(appendNextChunk, delay);
+                } else {
+                    // Stop streaming and reveal final content structure
+                    document.getElementById('loading-state').classList.add('hidden');
+                    element.classList.remove('hidden');
+                }
+            }
+
+            appendNextChunk();
+        }
+
+        // --- 3. Date Picker Logic ---
+        const TODAY = new Date();
+        let selectedDate = new Date();
+
+        const dateDisplay = document.getElementById('current-date-display');
+        const datePicker = document.getElementById('date-picker-input');
+        const prevDayButton = document.getElementById('prev-day-button');
+        const nextDayButton = document.getElementById('next-day-button');
+        const regionSelect = document.getElementById('region-select');
+
+        function formatDate(date) {
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const dd = String(date.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function formatDisplayDate(date) {
+            return date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function updateDateUI(date) {
+            selectedDate = date;
+            const formattedDate = formatDate(date);
+            
+            // Update display text
+            dateDisplay.textContent = formatDisplayDate(date);
+            
+            // Set input value (mainly for setting the minimum/maximum)
+            datePicker.value = formattedDate;
+            datePicker.max = formatDate(TODAY); // Disable future dates
+
+            // Disable Next Day button if date is today
+            const isToday = formattedDate === formatDate(TODAY);
+            if (isToday) {
+                nextDayButton.disabled = true;
+                nextDayButton.classList.remove('bg-sky-600', 'hover:bg-sky-700', 'text-white');
+                nextDayButton.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+            } else {
+                nextDayButton.disabled = false;
+                nextDayButton.classList.add('bg-sky-600', 'hover:bg-sky-700', 'text-white');
+                nextDayButton.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+            }
+
+            // If a region is selected, re-run the report load to update the date in the report
+            if (regionSelect.value) {
+                handleRegionChange();
+            }
+        }
+
+        function changeDay(offset) {
+            const newDate = new Date(selectedDate);
+            newDate.setDate(newDate.getDate() + offset);
+            
+            // Prevent going into the future
+            if (offset > 0 && newDate > TODAY) {
+                updateDateUI(TODAY);
+                return;
+            }
+
+            updateDateUI(newDate);
+        }
+
+        // --- 4. Main Event Listener & Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const reportOutput = document.getElementById('report-output');
+            const welcomeMessage = document.getElementById('welcome-message');
+            const loadingState = document.getElementById('loading-state');
+
+            // Initialize the date component to today
+            updateDateUI(TODAY);
+
+            // Add date navigation listeners
+            prevDayButton.addEventListener('click', () => changeDay(-1));
+            nextDayButton.addEventListener('click', () => changeDay(1));
+            // Users can click the display text to open the date picker
+            dateDisplay.addEventListener('click', () => datePicker.click());
+            datePicker.addEventListener('change', (e) => updateDateUI(new Date(e.target.value)));
+
+
+            window.handleRegionChange = function handleRegionChange() {
+                const selectedRegion = regionSelect.value;
+                const dateString = formatDisplayDate(selectedDate);
+                
+                // 1. Hide/Clear everything initially
+                reportOutput.classList.add('hidden');
+                welcomeMessage.classList.add('hidden');
+                loadingState.classList.add('hidden');
+                reportOutput.innerHTML = ''; 
+
+                if (selectedRegion === 'sea-to-sky') {
+                    // 2. Show loading state
+                    loadingState.classList.remove('hidden');
+                    // Scroll to the loading state smoothly
+                    window.scrollTo({ top: loadingState.offsetTop - 20, behavior: 'smooth' });
+
+                    // 3. Get and parse the content
+                    const rawContent = seaToSkyReport(dateString);
+                    const formattedContent = parseContent(rawContent);
+                    
+                    // 4. Start the streaming simulation
+                   setTimeout(() => {
+    loadingState.classList.add('hidden');
+    reportOutput.innerHTML = formattedContent;
+    reportOutput.classList.remove('hidden');
+}, 1000);
+
+                } else if (selectedRegion) {
+                    // Show a message for future regions
+                    reportOutput.innerHTML = `
+                        <div class="text-center p-8 text-gray-600 bg-yellow-50 rounded-lg">
+                            <h4 class="text-2xl font-semibold text-yellow-700">Content Not Ready Yet 🚧</h4>
+                            <p class="mt-2">Briefings for <strong>${selectedRegion.toUpperCase().replace('-', ' ')}</strong> are not yet available!</p>
+                        </div>
+                    `;
+                    reportOutput.classList.remove('hidden');
+                } else {
+                    // Re-show the welcome message 
+                    welcomeMessage.classList.remove('hidden');
+                }
+            }
+
+            // Attach the main event listener
+            regionSelect.addEventListener('change', handleRegionChange);
+        });
+    </script>
+</body>
+</html>
