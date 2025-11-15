@@ -1,0 +1,1648 @@
+[
+  { "call": "api.avalanche.ca/forecasts/en/products" },
+
+  {
+    "id": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+    "slug": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+    "url": "https://avalanche.ca/forecasts/848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "name": "010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "bbox": null
+    },
+    "report": {
+      "id": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "forecaster": "Parks Canada",
+      "dateIssued": "2025-10-30T23:00:00.000Z",
+      "validUntil": "2025-12-01T00:00:00.000Z",
+      "timezone": "America/Edmonton",
+      "title": "Waterton",
+      "highlights": "<p>Currently <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/early-season-conditions\">Early Season Conditions</a> exist in Waterton Park. Make sure to pack avalanche gear and prepare for snow as deeper pockets may be at threshold for avalanches. Regular avalanche bulletins will resume later in the fall. </p>",
+      "confidence": {
+        "rating": {
+          "value": "high",
+          "display": "High"
+        }
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "avalanche-summary",
+            "display": "Avalanche Summary"
+          },
+          "content": " <p>No new avalanches observed, suspect most areas are below threshold for avalanche. </p>"
+        },
+        {
+          "type": {
+            "value": "snowpack-summary",
+            "display": "Snowpack Summary"
+          },
+          "content": " <p>Up to 30cm of snow exists in the alpine, expect lee areas and drifts to be deeper. </p>"
+        },
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>For current weather forecast, please see <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/weather/forecast\">Mountain Weather Forecast </a></p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-10-30T23:00:00Z",
+            "display": "Thursday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-10-31T23:00:00Z",
+            "display": "Friday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-01T23:00:00Z",
+            "display": "Saturday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [],
+      "terrainAndTravelAdvice": [],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": true
+    },
+    "version": 1,
+    "owner": {
+      "value": "parks-waterton",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+    "slug": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+    "url": "https://avalanche.ca/forecasts/820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "name": "2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "bbox": null
+    },
+    "report": {
+      "id": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "forecaster": "Avalanche Canada",
+      "dateIssued": "2025-10-01T18:30:00.000Z",
+      "validUntil": "2026-01-23T19:30:00.000Z",
+      "timezone": "America/St_Johns",
+      "title": "Corner Brook-Gros Morne-Northern Peninsula",
+      "highlights": "<p>Factor avalanches into your trip plan and carry avalanche safety gear. <a target=\"_blank\" rel=\"noreferrer noopener\" class=\"fui-Link ___1q1shib f2hkw1w f3rmtva f1ewtqcl fyind8e f1k6fduh f1w7gpdv fk6fouc fjoy568 figsok6 f1s184ao f1mk8lai fnbmjn9 f1o700av f13mvf36 f1cmlufx f9n3di6 f1ids18y f1tx3yz7 f1deo86v f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a f1h8hb77 f1lqvz6u f10aw75t fsle3fq f17ae5zn\" href=\"https://avalanche.ca/early-season-conditions\">Learn about early season conditions</a>. Avalanche forecasts begin January 23.</p>",
+      "confidence": {
+        "rating": {
+          "value": "noRating",
+          "display": "No Rating"
+        }
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>More details can be found in the <a href =\"https://www.avalanche.ca/weather/forecast\">Mountain Weather Forecast</a>.</p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-10-02T18:30:00Z",
+            "display": "Thursday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-10-03T18:30:00Z",
+            "display": "Friday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-10-04T18:30:00Z",
+            "display": "Saturday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [],
+      "terrainAndTravelAdvice": [],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": false
+    },
+    "version": 1,
+    "owner": {
+      "value": "avalanche-canada",
+      "display": "Avalanche Canada",
+      "isExternal": false,
+      "url": "https://avalanche.ca/en"
+    },
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "slug": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "url": "https://avalanche.ca/forecasts/30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "name": "53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "bbox": null
+    },
+    "report": {
+      "id": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "forecaster": "Avalanche Canada",
+      "dateIssued": "2025-10-01T23:00:00.000Z",
+      "validUntil": "2025-11-27T00:00:00.000Z",
+      "timezone": "America/Vancouver",
+      "title": "Blue River-Clearwater-McBride-Premier-Quesnel-Sugarbowl-Bonnington-Grohman-Kootenay Pass-Norns-Rossland-South Okanagan-Ymir-Akamina-Flathead-Lizard-Clemina-Esplanade-Jordan-North Monashee-North Selkirk-Shuswap-East Kakwa-Kakwa-McGregor-Pine Pass-Renshaw-Robson-Tumbler-Boundary-Kitimat-Nass-Rupert-Seven Sisters-Shames-Stewart-Howson-Kispiox-Microwave-Sinclair-Ningunsaw-North Bulkley-South Bulkley-Telkwa-Crawford-Dogtooth-East Purcell-Moyie-St. Mary-West Purcell-Brandywine-Garibaldi-Homathko-Powell River-Spearhead-Tantalus-North Shore-Sasquatch-Sky Pilot-Tetrahedron-Birkenhead-Coquihalla-Duffey-Harrison-Fraser-Manning-Skagit-South Chilcotin-Stein-Taseko-Badshot-Battle-Central Selkirk-Goat-Gold-Kokanee-North Okanagan-Retallack-Valhalla-Whatshan-Bull-Crowsnest North-Crowsnest South-Elkford East-Elkford West-East Island-North Island-South Island-West Island-Tutshi-Wheaton-White Pass East-White Pass West-Haines Pass",
+      "highlights": "<p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/early-season-conditions\">Avalanches hazard may exist where there is snow</a>. Pack a transceiver, shovel, and probe, and factor avalanches into your trip plan. Daily avalanche forecasts will begin November 26 at 4 PM.</p>",
+      "confidence": {
+        "rating": {
+          "value": "noRating",
+          "display": "No Rating"
+        }
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>More details can be found in the <a href =\"https://www.avalanche.ca/weather/forecast\">Mountain Weather Forecast</a>.</p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-10-02T23:00:00Z",
+            "display": "Thursday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-10-03T23:00:00Z",
+            "display": "Friday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-10-04T23:00:00Z",
+            "display": "Saturday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [],
+      "terrainAndTravelAdvice": [],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": false
+    },
+    "version": 1,
+    "owner": {
+      "value": "avalanche-canada",
+      "display": "Avalanche Canada",
+      "isExternal": false,
+      "url": "https://avalanche.ca/en"
+    },
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+    "slug": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+    "url": "https://avalanche.ca/forecasts/c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "name": "d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "bbox": null
+    },
+    "report": {
+      "id": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "forecaster": "Kananaskis",
+      "dateIssued": "2025-11-07T19:15:59.003Z",
+      "validUntil": "2025-11-15T15:00:00.000Z",
+      "timezone": "America/Edmonton",
+      "title": "Bow Valley-Highwood Pass-North 40-Spray - KLakes",
+      "highlights": "<p>There has been some windslabs avalanche activity noted in alpine terrain over the past week.  The majority of these avalanches were sz 1.5 and running to upper treeline.  Ice climbers think about overhead terrain and avalanche potential.</p>",
+      "confidence": {
+        "rating": {
+          "value": "low",
+          "display": "Low"
+        },
+        "statements": [
+          "Uncertainty is due to the limited number of field observations."
+        ]
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "avalanche-summary",
+            "display": "Avalanche Summary"
+          },
+          "content": " <p>A few windslabs up to sz 2 were observed in flights throughout the region over this past week. These were mainly on N and E aspects. </p>"
+        },
+        {
+          "type": {
+            "value": "snowpack-summary",
+            "display": "Snowpack Summary"
+          },
+          "content": " <p><strong>Observations are still very limited.</strong></p><p>Snow is accumulating at treeline and above. Weather stations are reporting 40cm of snow in alpine areas with amounts rapidly tapering at treeline and below.</p><p>A temperature crust from Nov 1st is down 10-15cm and being reported up to 2100m while a crust more basal in the snowpack is being reported into alpine areas on northern and eastern aspects. </p>"
+        },
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p></p><p></p> <p>More details can be found in the <a href =\"https://www.avalanche.ca/weather/forecast\">Mountain Weather Forecast</a>.</p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-11-08T19:15:59Z",
+            "display": "Saturday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-09T19:15:59Z",
+            "display": "Sunday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-10T19:15:59Z",
+            "display": "Monday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [
+        {
+          "type": {
+            "value": "windslab",
+            "display": "Wind slab"
+          },
+          "comment": "<p>Windslabs along ridgelines and in gullied terrain. </p>",
+          "factors": [
+            {
+              "type": {
+                "value": "elevation",
+                "display": "What Elevation?"
+              },
+              "graphic": {
+                "id": "elevation-0-1-1_en",
+                "url": "https://assets.avalanche.ca/images/Elevation/Elevation-0-1-1_EN.png",
+                "alt": " Treeline, Alpine"
+              }
+            },
+            {
+              "type": {
+                "value": "aspect",
+                "display": "Which Slopes?"
+              },
+              "graphic": {
+                "id": "aspect-1-1-1-1-0-0-0-0_en",
+                "url": "https://assets.avalanche.ca/images/Compass/compass-1-1-1-1-0-0-0-0_EN.png",
+                "alt": " North, Northeast, East, Southeast"
+              }
+            },
+            {
+              "type": {
+                "value": "likelihood",
+                "display": "Chances of Avalanches?"
+              },
+              "graphic": {
+                "id": "likelihood-possible_unlikely_en",
+                "url": "https://assets.avalanche.ca/images/Likelihood/Likelihood-2_EN.png",
+                "alt": " Unlikely - Possible"
+              }
+            },
+            {
+              "type": {
+                "value": "size",
+                "display": "Expected Size?"
+              },
+              "graphic": {
+                "id": "size-1-3_en",
+                "url": "https://assets.avalanche.ca/images/size/Size-1-3_EN.png",
+                "alt": " Small - Large"
+              }
+            }
+          ],
+          "data": {
+            "elevations": [
+              {
+                "value": "alp",
+                "display": "Alpine"
+              },
+              {
+                "value": "tln",
+                "display": "Treeline"
+              }
+            ],
+            "aspects": [
+              {
+                "value": "se",
+                "display": "Southeast"
+              },
+              {
+                "value": "n",
+                "display": "North"
+              },
+              {
+                "value": "ne",
+                "display": "Northeast"
+              },
+              {
+                "value": "e",
+                "display": "East"
+              }
+            ],
+            "likelihood": {
+              "value": "possible_unlikely",
+              "display": "possible_unlikely"
+            },
+            "expectedSize": {
+              "min": "1.0",
+              "max": "2.0"
+            }
+          }
+        }
+      ],
+      "terrainAndTravelAdvice": [],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": false
+    },
+    "version": 1,
+    "owner": {
+      "value": "kananaskis",
+      "display": "Kananaskis",
+      "isExternal": false,
+      "url": "https://avalanche.ca/en/forecasts/kananaskis"
+    },
+    "notifications": [
+      {
+        "type": "info",
+        "content": "<p>Areas of Kananaskis Country are intermittently closed for avalanche control using EXPLOSIVES. Closures will be indicated in headline below.</p>"
+      }
+    ],
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+    "slug": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+    "url": "https://avalanche.ca/forecasts/7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "name": "03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "bbox": null
+    },
+    "report": {
+      "id": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "forecaster": "Avalanche Québec",
+      "dateIssued": "2025-05-15T19:00:00.000Z",
+      "validUntil": "2025-12-01T23:00:00.000Z",
+      "timezone": "America/New_York",
+      "title": "Chic-Chocs",
+      "highlights": "<p>THE BULLETINS ARE DONE FOR THE SEASON – BACK ON DECEMBER 1ST, 2025.<br>Enjoy summer!</p>",
+      "confidence": {
+        "rating": {
+          "value": "noRating",
+          "display": "No Rating"
+        }
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>For the coming weeks, we invite you to consult the public weather resources recommended when preparing for a mountain outing and available&nbsp;<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanchequebec.ca/en/public-weather/\">here</a>.</p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-05-16T19:00:00Z",
+            "display": "Friday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-05-17T19:00:00Z",
+            "display": "Saturday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-05-18T19:00:00Z",
+            "display": "Sunday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "noforecast",
+                "display": "No Forecast"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [],
+      "terrainAndTravelAdvice": [],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": true
+    },
+    "version": 1,
+    "owner": {
+      "value": "avalanche-quebec",
+      "display": "Avalanche Québec",
+      "isExternal": false,
+      "url": "https://avalanchequebec.ca"
+    },
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+    "slug": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+    "url": "https://avalanche.ca/forecasts/0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "name": "afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "bbox": null
+    },
+    "report": {
+      "id": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "forecaster": "Parks Canada",
+      "dateIssued": "2025-11-10T00:00:00Z",
+      "validUntil": "2025-11-11T00:00:00Z",
+      "timezone": "America/Edmonton",
+      "title": "Banff-East Side 93N-Kootenay-Lake Louise-LLSA-Sunshine-West Side 93N-Field-Little Yoho",
+      "highlights": "<p>Watch out for building hazard due to sluffing in steep gullies and new windslab development if the storm comes in as forecasted on Monday/Tuesday.</p><p>Monitor local weather conditions at <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/weather/stations\">Avalanche Canada's website.</a></p><p></p>",
+      "confidence": {
+        "rating": {
+          "value": "moderate",
+          "display": "Moderate"
+        }
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "avalanche-summary",
+            "display": "Avalanche Summary"
+          },
+          "content": " <p>No new avalanches observed or reported on Sunday but on Saturday, test firing of Mt Bosworth's remote avalanche control system (Gaz-Ex) produced two size 1.5 windslabs, both located on a South aspect at 2300m. </p>"
+        },
+        {
+          "type": {
+            "value": "snowpack-summary",
+            "display": "Snowpack Summary"
+          },
+          "content": " <p>5–10 cm of storm snow has been redistributed into wind slabs in lee areas, especially in the alpine. Height of snow is  80-100cm in the alpine, 30–60 cm at treeline, and it tapers quickly below treeline. Early reports suggest that while the snowpack is generally thin, it supports the weight of a skier.</p>"
+        },
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>Temperatures are forecasted to cool overnight Sunday with Westerly winds decreasing slightly but staying strong throughout the day Monday.  We expect 1-15 cm of new snow on Monday with higher amounts north of Lake Louise. Drier and calmer conditions are expected Tuesday.</p><p>Western Canada <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/weather/forecast\">weather maps</a></p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-11-11T00:00:00Z",
+            "display": "Monday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-12T00:00:00Z",
+            "display": "Tuesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-13T00:00:00Z",
+            "display": "Wednesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [
+        {
+          "type": {
+            "value": "windslab",
+            "display": "Wind slab"
+          },
+          "comment": "<p>There is enough snow in wind-loaded alpine and high treeline features to create avalanches, and human triggering is possible. While we expect these slides to be limited in size, getting avalanched in a shallow snowpack can easily result in an injury, so use caution in steep terrain.</p>",
+          "factors": [
+            {
+              "type": {
+                "value": "elevation",
+                "display": "What Elevation?"
+              },
+              "graphic": {
+                "id": "elevation-0-0-1_en",
+                "url": "https://assets.avalanche.ca/images/Elevation/Elevation-0-0-1_EN.png",
+                "alt": " Alpine"
+              }
+            },
+            {
+              "type": {
+                "value": "aspect",
+                "display": "Which Slopes?"
+              },
+              "graphic": {
+                "id": "aspect-1-1-1-1-0-0-0-1_en",
+                "url": "https://assets.avalanche.ca/images/Compass/compass-1-1-1-1-0-0-0-1_EN.png",
+                "alt": " North, Northeast, East, Southeast, Northwest"
+              }
+            },
+            {
+              "type": {
+                "value": "likelihood",
+                "display": "Chances of Avalanches?"
+              },
+              "graphic": {
+                "id": "likelihood-possible_en",
+                "url": "https://assets.avalanche.ca/images/Likelihood/Likelihood-3_EN.png",
+                "alt": " Possible"
+              }
+            },
+            {
+              "type": {
+                "value": "size",
+                "display": "Expected Size?"
+              },
+              "graphic": {
+                "id": "size-1-3_en",
+                "url": "https://assets.avalanche.ca/images/size/Size-1-3_EN.png",
+                "alt": " Small - Large"
+              }
+            }
+          ],
+          "data": {
+            "elevations": [
+              {
+                "value": "alp",
+                "display": "Alpine"
+              }
+            ],
+            "aspects": [
+              {
+                "value": "se",
+                "display": "Southeast"
+              },
+              {
+                "value": "n",
+                "display": "North"
+              },
+              {
+                "value": "ne",
+                "display": "Northeast"
+              },
+              {
+                "value": "e",
+                "display": "East"
+              },
+              {
+                "value": "nw",
+                "display": "Northwest"
+              }
+            ],
+            "likelihood": {
+              "value": "possible",
+              "display": "possible"
+            },
+            "expectedSize": {
+              "min": "1.0",
+              "max": "2.0"
+            }
+          }
+        }
+      ],
+      "terrainAndTravelAdvice": [
+        "Watch for newly formed and reactive wind slabs as you transition into wind-affected terrain.",
+        "Use ridges or ribs to avoid areas of wind-loaded snow."
+      ],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": true
+    },
+    "version": 1,
+    "owner": {
+      "value": "parks-byk",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "notifications": [
+      {
+        "type": "info",
+        "content": "<p>Area closures for avalanche control are in effect periodically from November to May. Click <a href=\"https://www.pc.gc.ca/en/pn-np/mtn/securiteenmontagne-mountainsafety/avalanche/declenchementpreventif-controlareas?_ga=2.80778963.573438189.1667223637-385521292.1638363862\">here</a> for more information and maps."
+      }
+    ],
+    "media": {
+      "images": [
+        {
+          "id": "7c5e12db-014e-4f52-b712-c5900aeb3df2",
+          "url": "http://res.cloudinary.com/forecasts/image/upload/v1762726754/prod/parks/byk/dh7z0d8ko96boctppq1p.jpg",
+          "width": 3024,
+          "height": 4032,
+          "credit": "",
+          "caption": "<p>Recent profile from Bath Glacier ~ 2600m</p>",
+          "tag": "snowpack",
+          "isArchived": false,
+          "altText": "Recent profile from Bath Glacier ~ 2600m",
+          "dateTaken": "2025-11-08T22:19:21.335Z"
+        },
+        {
+          "id": "79436988-475b-434f-bb2d-70437d641b50",
+          "url": "http://res.cloudinary.com/forecasts/image/upload/v1762727296/prod/parks/byk/uaoehge08fappafa7anz.jpg",
+          "width": 2523,
+          "height": 2526,
+          "credit": "",
+          "caption": "",
+          "tag": "snowpack",
+          "isArchived": false,
+          "altText": "",
+          "dateTaken": "2025-11-08T22:28:39.896Z"
+        }
+      ]
+    }
+  },
+  {
+    "id": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+    "slug": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+    "url": "https://avalanche.ca/forecasts/1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "name": "b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "bbox": null
+    },
+    "report": {
+      "id": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "forecaster": "Parks Canada",
+      "dateIssued": "2025-11-10T00:00:00Z",
+      "validUntil": "2025-11-11T00:00:00Z",
+      "timezone": "America/Vancouver",
+      "title": "Glacier",
+      "highlights": "<p>Low snow coverage doesn't eliminate avalanche danger. A<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/map?panel=mountain-information-network-submissions%2F308fe4fc-bcf5-11f0-b25e-0a58a9feac02\"> skier triggered a size 2.0 avalanche</a> at Balu Pass yesterday.</p><p>Early season hazards abound. Expect to hit rocks, logs, and open creeks in your travels.</p><p></p>",
+      "confidence": {
+        "rating": {
+          "value": "low",
+          "display": "Low"
+        },
+        "statements": [
+          "Uncertainty is due to the limited number of field observations."
+        ]
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "avalanche-summary",
+            "display": "Avalanche Summary"
+          },
+          "content": " <p>A <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/map?panel=mountain-information-network-submissions%2F308fe4fc-bcf5-11f0-b25e-0a58a9feac02\">skier triggered a size 2.0 avalanche</a> yesterday at Balu Pass in a wind stiffened area, and they went for a rocky ride. The avalanche was triggered from a thin area, and fractured ~30m above the rider caught. They were partially buried.</p><p>If there's enough to ride, there's enough to slide! Be sure to bring a transceiver, shovel and probe if you venture out.</p>"
+        },
+        {
+          "type": {
+            "value": "snowpack-summary",
+            "display": "Snowpack Summary"
+          },
+          "content": " <p>There is ~120-140cms of snow on the ground in the Alpine, 80-120cm at treeline, and 20cm at the highway elevation.</p><p>A 6mm surface hoar layer is buried down ~30cm in all open areas treeline and above.</p><p>Glaciers have poor coverage with just enough snow to hide small crevasses.</p>"
+        },
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p>The ridge breaks down, allowing the stormy Pacific low's to impact the interior again.</p><p><strong>Tonight:</strong> Flurries, 12cm. Alpine low -2°C. Freezing level (FZL) 1700m. Ridge winds SW-45km/h. Weak temperature inversion.</p><p><strong>Mon: </strong>Scattered flurries, 5cm. Alpine high -1°C. FZL 1900m. Winds SW 30-50km/h.</p><p><strong>Tues:</strong> Isolated flurries, trace accumulation. Alp high -3°C, low -7°C. FZL 1600m. Wind SW-15 gusting 40km/h.</p><p></p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-11-11T00:00:00Z",
+            "display": "Monday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-12T00:00:00Z",
+            "display": "Tuesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-13T00:00:00Z",
+            "display": "Wednesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "low",
+                "display": "1 - Low"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [
+        {
+          "type": {
+            "value": "stormslab",
+            "display": "Storm slab"
+          },
+          "comment": "<p>Another 15cm storm is forecast for tonight into tomorrow, accompanied by strong SW'ly winds. </p><p>A layer of surface hoar exists down ~30cm. Although ground roughness breaks up slope connectivity early season, expect rider-triggered avalanches to be possible on smooth open slopes.</p>",
+          "factors": [
+            {
+              "type": {
+                "value": "elevation",
+                "display": "What Elevation?"
+              },
+              "graphic": {
+                "id": "elevation-0-1-1_en",
+                "url": "https://assets.avalanche.ca/images/Elevation/Elevation-0-1-1_EN.png",
+                "alt": " Treeline, Alpine"
+              }
+            },
+            {
+              "type": {
+                "value": "aspect",
+                "display": "Which Slopes?"
+              },
+              "graphic": {
+                "id": "aspect-1-1-1-1-1-1-1-1_en",
+                "url": "https://assets.avalanche.ca/images/Compass/compass-1-1-1-1-1-1-1-1_EN.png",
+                "alt": " North, Northeast, East, Southeast, south, Southwest, West, Northwest"
+              }
+            },
+            {
+              "type": {
+                "value": "likelihood",
+                "display": "Chances of Avalanches?"
+              },
+              "graphic": {
+                "id": "likelihood-likely_possible_en",
+                "url": "https://assets.avalanche.ca/images/Likelihood/Likelihood-4_EN.png",
+                "alt": " Possible - Likely"
+              }
+            },
+            {
+              "type": {
+                "value": "size",
+                "display": "Expected Size?"
+              },
+              "graphic": {
+                "id": "size-1-3_en",
+                "url": "https://assets.avalanche.ca/images/size/Size-1-3_EN.png",
+                "alt": " Small - Large"
+              }
+            }
+          ],
+          "data": {
+            "elevations": [
+              {
+                "value": "tln",
+                "display": "Treeline"
+              },
+              {
+                "value": "alp",
+                "display": "Alpine"
+              }
+            ],
+            "aspects": [
+              {
+                "value": "ne",
+                "display": "Northeast"
+              },
+              {
+                "value": "e",
+                "display": "East"
+              },
+              {
+                "value": "w",
+                "display": "West"
+              },
+              {
+                "value": "sw",
+                "display": "Southwest"
+              },
+              {
+                "value": "nw",
+                "display": "Northwest"
+              },
+              {
+                "value": "n",
+                "display": "North"
+              },
+              {
+                "value": "se",
+                "display": "Southeast"
+              },
+              {
+                "value": "s",
+                "display": "s"
+              }
+            ],
+            "likelihood": {
+              "value": "likely_possible",
+              "display": "likely_possible"
+            },
+            "expectedSize": {
+              "min": "1.0",
+              "max": "2.0"
+            }
+          }
+        }
+      ],
+      "terrainAndTravelAdvice": [
+        "Surface hoar distribution is highly variable. Avoid generalizing your observations.",
+        "Approach lee and cross-loaded slopes with caution."
+      ],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": true
+    },
+    "version": 1,
+    "owner": {
+      "value": "parks-glacier",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "notifications": [
+      {
+        "type": "info",
+        "content": "<p>Large areas of Glacier National Park are CLOSED for avalanche control using EXPLOSIVES. <a href=\"https://www.pc.gc.ca/apps/Rogers-Pass\">Real Time Area Status</a> - <a href=\"https://www.pc.gc.ca/en/pn-np/bc/glacier/visit/hiver-winter/ski\">Winter Permit Information</a></p>"
+      }
+    ],
+    "media": {
+      "images": []
+    }
+  },
+  {
+    "id": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+    "slug": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+    "url": "https://avalanche.ca/forecasts/572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+    "type": "avalancheforecast",
+    "area": {
+      "id": "426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "name": "426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "bbox": null
+    },
+    "report": {
+      "id": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "forecaster": "Parks Canada",
+      "dateIssued": "2025-11-10T00:00:00.000Z",
+      "validUntil": "2025-11-13T00:00:00.000Z",
+      "timezone": "America/Edmonton",
+      "title": "Brazeau-Churchill-Cirrus-Wilson-Fryatt-Icefields-Maligne-Marmot-Miette Lake-Pyramid",
+      "highlights": "<p>Extreme winds are forecast from Sunday night until Monday evening. Wind speeds of up to 160 km/h are expected at both the Columbia Icefields and the Bald Hills. Expect widespread wind transport at treeline and above.</p>",
+      "confidence": {
+        "rating": {
+          "value": "moderate",
+          "display": "Moderate"
+        },
+        "statements": [
+          "Uncertainty is due to the track & intensity of the incoming weather system."
+        ]
+      },
+      "summaries": [
+        {
+          "type": {
+            "value": "avalanche-summary",
+            "display": "Avalanche Summary"
+          },
+          "content": " <p>A few small loose dry avalanches were observed in the Alpine on Saturday. </p>"
+        },
+        {
+          "type": {
+            "value": "snowpack-summary",
+            "display": "Snowpack Summary"
+          },
+          "content": " <p>Check here for how to navigate <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.avalanche.ca/early-season-conditions\">Early Season Conditions</a></p><p>Our field team ventured out to Hilda Ridge on Saturday and found generally supportive travel. Early season hazards exist with snow just covering rocks &amp; trees.</p><p>Treeline has 30-55cm. The alpine is highly variable with either scoured back to rocks or loaded areas of over 100cm. Where the snow does exist there are windslabs. Alpine bowls &amp; steep gullies are classic spots for early season avalanches.</p><p></p><p></p>"
+        },
+        {
+          "type": {
+            "value": "weather-summary",
+            "display": "Weather Summary"
+          },
+          "content": " <p><strong>Monday</strong></p><p>Mainly cloudy with isolated flurries.</p><p>Precipitation: Up to 20 cm overnight</p><p>Alpine temperature: High -2 °C.</p><p>Extreme winds in the alpine out of the south west. Up to 160 km/hr in the alpine.</p><strong>Tuesday</strong> <p>Mainly cloudy with isolated flurries.</p><p>Precipitation: Trace.</p><p>Alpine temperature: Low -7 °C, High -2 °C.</p><p>Extreme winds in the alpine out of the south west. Up to 160 km/hr in the alpine.</p><p>For updated forecast go to Jasper National Park <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://weather.gc.ca/en/location/index.html?coords=52.983,-118.100\">Forecast.</a></p>"
+        }
+      ],
+      "dangerRatings": [
+        {
+          "date": {
+            "value": "2025-11-11T00:00:00Z",
+            "display": "Monday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "considerable",
+                "display": "3 - Considerable"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-12T00:00:00Z",
+            "display": "Tuesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        },
+        {
+          "date": {
+            "value": "2025-11-13T00:00:00Z",
+            "display": "Wednesday"
+          },
+          "ratings": {
+            "alp": {
+              "display": "Alpine",
+              "rating": {
+                "value": "moderate",
+                "display": "2 - Moderate"
+              }
+            },
+            "tln": {
+              "display": "Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            },
+            "btl": {
+              "display": "Below Treeline",
+              "rating": {
+                "value": "earlyseason",
+                "display": "Early Season"
+              }
+            }
+          }
+        }
+      ],
+      "problems": [
+        {
+          "type": {
+            "value": "windslab",
+            "display": "Wind slab"
+          },
+          "comment": "<p>There’s enough snow in the alpine to build up in lee features and steep gullies. While the problem may be small, the main concern is getting injured. A shallow snowpack and early season hazards can easily turn a minor slide into a bad situation. </p>",
+          "factors": [
+            {
+              "type": {
+                "value": "elevation",
+                "display": "What Elevation?"
+              },
+              "graphic": {
+                "id": "elevation-0-1-1_en",
+                "url": "https://assets.avalanche.ca/images/Elevation/Elevation-0-1-1_EN.png",
+                "alt": " Treeline, Alpine"
+              }
+            },
+            {
+              "type": {
+                "value": "aspect",
+                "display": "Which Slopes?"
+              },
+              "graphic": {
+                "id": "aspect-1-1-1-1-0-0-0-1_en",
+                "url": "https://assets.avalanche.ca/images/Compass/compass-1-1-1-1-0-0-0-1_EN.png",
+                "alt": " North, Northeast, East, Southeast, Northwest"
+              }
+            },
+            {
+              "type": {
+                "value": "likelihood",
+                "display": "Chances of Avalanches?"
+              },
+              "graphic": {
+                "id": "likelihood-unlikely_en",
+                "url": "https://assets.avalanche.ca/images/Likelihood/Likelihood-1_EN.png",
+                "alt": " Unlikely"
+              }
+            },
+            {
+              "type": {
+                "value": "size",
+                "display": "Expected Size?"
+              },
+              "graphic": {
+                "id": "size-1-2_en",
+                "url": "https://assets.avalanche.ca/images/size/Size-1-2_EN.png",
+                "alt": " Small - Small"
+              }
+            }
+          ],
+          "data": {
+            "elevations": [
+              {
+                "value": "tln",
+                "display": "Treeline"
+              },
+              {
+                "value": "alp",
+                "display": "Alpine"
+              }
+            ],
+            "aspects": [
+              {
+                "value": "ne",
+                "display": "Northeast"
+              },
+              {
+                "value": "e",
+                "display": "East"
+              },
+              {
+                "value": "se",
+                "display": "Southeast"
+              },
+              {
+                "value": "nw",
+                "display": "Northwest"
+              },
+              {
+                "value": "n",
+                "display": "North"
+              }
+            ],
+            "likelihood": {
+              "value": "unlikely",
+              "display": "unlikely"
+            },
+            "expectedSize": {
+              "min": "1.0",
+              "max": "1.5"
+            }
+          }
+        }
+      ],
+      "terrainAndTravelAdvice": [
+        "Be careful as you transition into wind-affected terrain."
+      ],
+      "message": null,
+      "season": null,
+      "comment": null,
+      "isFullTranslation": true
+    },
+    "version": 1,
+    "owner": {
+      "value": "parks-jasper",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "notifications": [
+      {
+        "type": "info",
+        "content": "Seasonal closures for caribou conservation in Jasper National Park are in effect from November to May. For more information, <a href=\"https://www.pc.gc.ca/en/pn-np/ab/jasper/nature/conservation/retablissement-caribou-recovery/mesuresap-bcactions\">click here.</a>"
+      }
+    ],
+    "media": {
+      "images": []
+    }
+  }
+]

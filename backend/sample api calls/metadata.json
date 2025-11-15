@@ -1,0 +1,662 @@
+[
+  { "call": "api.avalanche.ca/forecasts/en/products" },
+  {
+    
+    "product": {
+      "slug": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "type": "avalancheforecast",
+      "title": "Bow Valley-Highwood Pass-North 40-Spray - KLakes",
+      "id": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "reportId": "c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea"
+    },
+    "area": {
+      "id": "d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+      "name": "Bow Valley-Highwood Pass-North 40-Spray - KLakes",
+      "bbox": [
+        -115.46851579999998, 50.485601247000034, -114.821596538,
+        51.156121400000075
+      ]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-11-08T19:15:59Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-08T19:15:59Z",
+        "to": "2025-11-09T19:15:59Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-09T19:15:59Z",
+        "to": "2025-11-10T19:15:59Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-10T19:15:59Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -115.1958225555043,
+      "latitude": 50.78856882104437
+    },
+    "url": "https://avalanche.ca/en/forecasts/c825f68b-8876-468a-ad43-eaff20de3645_d15dff296f550c29a26e3203191d60ed0a36eeda9361320a324047b0850d77ea",
+    "owner": {
+      "value": "kananaskis",
+      "display": "Kananaskis",
+      "isExternal": false,
+      "url": "Kananaskis"
+    },
+    "highestDanger": {
+      "value": "earlyseason",
+      "display": "Early Season",
+      "colour": "#0072C6"
+    }
+  },
+  {
+    "product": {
+      "slug": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "type": "avalancheforecast",
+      "title": "Chic-Chocs",
+      "id": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "reportId": "7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762"
+    },
+    "area": {
+      "id": "03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+      "name": "Chic-Chocs",
+      "bbox": [-66.2457, 48.7669, -65.9819, 49.051]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-05-16T19:00:00Z",
+        "ratings": {
+          "alp": "noforecast",
+          "tln": "noforecast",
+          "btl": "noforecast"
+        },
+        "graphic": {
+          "id": "noforecast-noforecast-noforecast",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/noforecast-noforecast-noforecast.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-05-16T19:00:00Z",
+        "to": "2025-05-17T19:00:00Z",
+        "ratings": {
+          "alp": "noforecast",
+          "tln": "noforecast",
+          "btl": "noforecast"
+        },
+        "graphic": {
+          "id": "noforecast-noforecast-noforecast",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/noforecast-noforecast-noforecast.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-05-17T19:00:00Z",
+        "to": "2025-05-18T19:00:00Z",
+        "ratings": {
+          "alp": "noforecast",
+          "tln": "noforecast",
+          "btl": "noforecast"
+        },
+        "graphic": {
+          "id": "noforecast-noforecast-noforecast",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/noforecast-noforecast-noforecast.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-05-18T19:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -66.08685907369768,
+      "latitude": 48.90968671256848
+    },
+    "url": "https://avalanche.ca/en/forecasts/7945c2eb-fdf0-4720-bb59-32cddfb0e4d3_03eb3e06c31ffda095ce133e8c6974197efdccd29c7723d078ef27742ff6a762",
+    "owner": {
+      "value": "avalanche-quebec",
+      "display": "Avalanche Québec",
+      "isExternal": false,
+      "url": "Avalanche Québec"
+    },
+    "highestDanger": {
+      "value": "noforecast",
+      "display": "No Forecast",
+      "colour": "white"
+    }
+  },
+  {
+    "product": {
+      "slug": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "type": "avalancheforecast",
+      "title": "Banff-East Side 93N-Kootenay-Lake Louise-LLSA-Sunshine-West Side 93N-Field-Little Yoho",
+      "id": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "reportId": "0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf"
+    },
+    "area": {
+      "id": "afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+      "name": "Banff-East Side 93N-Kootenay-Lake Louise-LLSA-Sunshine-West Side 93N-Field-Little Yoho",
+      "bbox": [-116.7663372, 50.9276064, -115.4056669, 51.9350297]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "moderate",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "moderate-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/moderate-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -116.16044043836781,
+      "latitude": 51.382373463285056
+    },
+    "url": "https://avalanche.ca/en/forecasts/0a8cda5c-8b82-4436-895f-6d5cb7b82f53_afe9ffd14c0637d10e2530857f8e7a8cba0277f33351d3b31c8f37f4111c6ecf",
+    "owner": {
+      "value": "parks-byk",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "highestDanger": {
+      "value": "moderate",
+      "display": "2 - Moderate",
+      "colour": "yellow"
+    }
+  },
+  {
+    "product": {
+      "slug": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "type": "avalancheforecast",
+      "title": "Glacier",
+      "id": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "reportId": "1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a"
+    },
+    "area": {
+      "id": "b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+      "name": "Glacier",
+      "bbox": [
+        -117.923752396, 51.035425685000064, -117.20107294199994,
+        51.48776434100015
+      ]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "moderate",
+          "tln": "moderate",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "moderate-moderate-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/moderate-moderate-earlyseason.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -117.52435368057834,
+      "latitude": 51.26859075131051
+    },
+    "url": "https://avalanche.ca/en/forecasts/1e873e8d-503f-4e11-be48-b4723f13baaa_b2a14eb464567902bcdf5b0cf1efe870416fee4de1d80d5b1f6d9cbc1b3bd73a",
+    "owner": {
+      "value": "parks-glacier",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "highestDanger": {
+      "value": "moderate",
+      "display": "2 - Moderate",
+      "colour": "yellow"
+    }
+  },
+  {
+    "product": {
+      "slug": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "type": "avalancheforecast",
+      "title": "Brazeau-Churchill-Cirrus-Wilson-Fryatt-Icefields-Maligne-Marmot-Miette Lake-Pyramid",
+      "id": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "reportId": "572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e"
+    },
+    "area": {
+      "id": "426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+      "name": "Brazeau-Churchill-Cirrus-Wilson-Fryatt-Icefields-Maligne-Marmot-Miette Lake-Pyramid",
+      "bbox": [
+        -118.67323849999997, 51.95316742300008, -116.66248008399998,
+        53.04656408800008
+      ]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-11-11T00:00:00Z",
+        "ratings": {
+          "alp": "considerable",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "considerable-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/considerable-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-11T00:00:00Z",
+        "to": "2025-11-12T00:00:00Z",
+        "ratings": {
+          "alp": "moderate",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "moderate-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/moderate-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-12T00:00:00Z",
+        "to": "2025-11-13T00:00:00Z",
+        "ratings": {
+          "alp": "moderate",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "moderate-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/moderate-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-13T00:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -117.62626152142234,
+      "latitude": 52.55611523237941
+    },
+    "url": "https://avalanche.ca/en/forecasts/572b8c81-e832-46a6-aea0-44e03b80d40d_426b4bc4f761f2890921214b32ed3bf9f5de086f39b6f755296daf3a3048587e",
+    "owner": {
+      "value": "parks-jasper",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "highestDanger": {
+      "value": "considerable",
+      "display": "3 - Considerable",
+      "colour": "orange"
+    }
+  },
+  {
+    "product": {
+      "slug": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "type": "avalancheforecast",
+      "title": "Waterton",
+      "id": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "reportId": "848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85"
+    },
+    "area": {
+      "id": "010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+      "name": "Waterton",
+      "bbox": [
+        -114.16658349999994, 48.997686300000055, -113.65343739999997,
+        49.20440260000004
+      ]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-10-30T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-30T23:00:00Z",
+        "to": "2025-10-31T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-31T23:00:00Z",
+        "to": "2025-11-01T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-11-01T23:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -113.93284710370706,
+      "latitude": 49.08129207544112
+    },
+    "url": "https://avalanche.ca/en/forecasts/848cd8c9-f483-47fe-a89f-a24e1b6c9789_010016cb778a7962e0174e68d5a278372db93924e19e450052de07b95eb72c85",
+    "owner": {
+      "value": "parks-waterton",
+      "display": "Parks Canada",
+      "isExternal": false,
+      "url": "Parks Canada"
+    },
+    "highestDanger": {
+      "value": "earlyseason",
+      "display": "Early Season",
+      "colour": "#0072C6"
+    }
+  },
+  {
+    "product": {
+      "slug": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "type": "avalancheforecast",
+      "title": "Corner Brook-Gros Morne-Northern Peninsula",
+      "id": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "reportId": "820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d"
+    },
+    "area": {
+      "id": "2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+      "name": "Corner Brook-Gros Morne-Northern Peninsula",
+      "bbox": [-58.7229632, 48.5483471, -56.1093795, 51.0839446]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-10-02T18:30:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-02T18:30:00Z",
+        "to": "2025-10-03T18:30:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-03T18:30:00Z",
+        "to": "2025-10-04T18:30:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-04T18:30:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -57.33055405402596,
+      "latitude": 49.827739704176054
+    },
+    "url": "https://avalanche.ca/en/forecasts/820de8f0-8866-4b25-b1fe-ed840de8be38_2b27cc579bf40b0d3360a5ffe527102213d07f32526775c4e2f0af58e02f8d3d",
+    "owner": {
+      "value": "avalanche-canada",
+      "display": "Avalanche Canada",
+      "isExternal": false,
+      "url": "Avalanche Canada"
+    },
+    "highestDanger": {
+      "value": "earlyseason",
+      "display": "Early Season",
+      "colour": "#0072C6"
+    }
+  },
+  {
+    "product": {
+      "slug": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "type": "avalancheforecast",
+      "title": "Blue River-Clearwater-McBride-Premier-Quesnel-Sugarbowl-Bonnington-Grohman-Kootenay Pass-Norns-Rossland-South Okanagan-Ymir-Akamina-Flathead-Lizard-Clemina-Esplanade-Jordan-North Monashee-North Selkirk-Shuswap-East Kakwa-Kakwa-McGregor-Pine Pass-Renshaw-Robson-Tumbler-Boundary-Kitimat-Nass-Rupert-Seven Sisters-Shames-Stewart-Howson-Kispiox-Microwave-Sinclair-Ningunsaw-North Bulkley-South Bulkley-Telkwa-Crawford-Dogtooth-East Purcell-Moyie-St. Mary-West Purcell-Brandywine-Garibaldi-Homathko-Powell River-Spearhead-Tantalus-North Shore-Sasquatch-Sky Pilot-Tetrahedron-Birkenhead-Coquihalla-Duffey-Harrison-Fraser-Manning-Skagit-South Chilcotin-Stein-Taseko-Badshot-Battle-Central Selkirk-Goat-Gold-Kokanee-North Okanagan-Retallack-Valhalla-Whatshan-Bull-Crowsnest North-Crowsnest South-Elkford East-Elkford West-East Island-North Island-South Island-West Island-Tutshi-Wheaton-White Pass East-White Pass West-Haines Pass",
+      "id": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "reportId": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed"
+    },
+    "area": {
+      "id": "53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+      "name": "Blue River-Clearwater-McBride-Premier-Quesnel-Sugarbowl-Bonnington-Grohman-Kootenay Pass-Norns-Rossland-South Okanagan-Ymir-Akamina-Flathead-Lizard-Clemina-Esplanade-Jordan-North Monashee-North Selkirk-Shuswap-East Kakwa-Kakwa-McGregor-Pine Pass-Renshaw-Robson-Tumbler-Boundary-Kitimat-Nass-Rupert-Seven Sisters-Shames-Stewart-Howson-Kispiox-Microwave-Sinclair-Ningunsaw-North Bulkley-South Bulkley-Telkwa-Crawford-Dogtooth-East Purcell-Moyie-St. Mary-West Purcell-Brandywine-Garibaldi-Homathko-Powell River-Spearhead-Tantalus-North Shore-Sasquatch-Sky Pilot-Tetrahedron-Birkenhead-Coquihalla-Duffey-Harrison-Fraser-Manning-Skagit-South Chilcotin-Stein-Taseko-Badshot-Battle-Central Selkirk-Goat-Gold-Kokanee-North Okanagan-Retallack-Valhalla-Whatshan-Bull-Crowsnest North-Crowsnest South-Elkford East-Elkford West-East Island-North Island-South Island-West Island-Tutshi-Wheaton-White Pass East-White Pass West-Haines Pass",
+      "bbox": [-137.1192801, 48.6694255, -113.9490704, 60.384656]
+    },
+    "icons": [
+      {
+        "type": "ratings",
+        "from": "0001-01-01T00:00:00Z",
+        "to": "2025-10-02T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-02T23:00:00Z",
+        "to": "2025-10-03T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-03T23:00:00Z",
+        "to": "2025-10-04T23:00:00Z",
+        "ratings": {
+          "alp": "earlyseason",
+          "tln": "earlyseason",
+          "btl": "earlyseason"
+        },
+        "graphic": {
+          "id": "earlyseason-earlyseason-earlyseason",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/earlyseason-earlyseason-earlyseason.svg",
+          "alt": ""
+        }
+      },
+      {
+        "type": "ratings",
+        "from": "2025-10-04T23:00:00Z",
+        "to": "9999-12-31T00:00:00Z",
+        "ratings": {
+          "alp": "norating",
+          "tln": "norating",
+          "btl": "norating"
+        },
+        "graphic": {
+          "id": "norating-norating-norating",
+          "url": "https://assets.avalanche.ca/graphics/forecast/rating/norating-norating-norating.svg",
+          "alt": ""
+        }
+      }
+    ],
+    "centroid": {
+      "longitude": -123.3464121869476,
+      "latitude": 52.9575243036738
+    },
+    "url": "https://avalanche.ca/en/forecasts/30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "owner": {
+      "value": "avalanche-canada",
+      "display": "Avalanche Canada",
+      "isExternal": false,
+      "url": "Avalanche Canada"
+    },
+    "highestDanger": {
+      "value": "earlyseason",
+      "display": "Early Season",
+      "colour": "#0072C6"
+    }
+  }
+]

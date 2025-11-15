@@ -1,0 +1,143 @@
+[
+    {"callToGetWhisForecast":"https://api.avalanche.ca/forecasts/en/products/point?lat=50.11367&long=-122.95477"},
+{
+  "id": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+  "slug": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+  "url": "https://avalanche.ca/forecasts/30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+  "type": "avalancheforecast",
+  "area": {
+    "id": "53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "name": "53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "bbox": null
+  },
+  "report": {
+    "id": "30c8ed4f-afc5-4f23-a737-4a0f7b1a8e96_53bb614cadbd487077d867dec6007dfed090d20fbc0cbfe941451b6af2df33ed",
+    "forecaster": "Avalanche Canada",
+    "dateIssued": "2025-10-01T23:00:00.000Z",
+    "validUntil": "2025-11-27T00:00:00.000Z",
+    "timezone": "America/Vancouver",
+    "title": "Blue River-Clearwater-McBride-Premier-Quesnel-Sugarbowl-Bonnington-Grohman-Kootenay Pass-Norns-Rossland-South Okanagan-Ymir-Akamina-Flathead-Lizard-Clemina-Esplanade-Jordan-North Monashee-North Selkirk-Shuswap-East Kakwa-Kakwa-McGregor-Pine Pass-Renshaw-Robson-Tumbler-Boundary-Kitimat-Nass-Rupert-Seven Sisters-Shames-Stewart-Howson-Kispiox-Microwave-Sinclair-Ningunsaw-North Bulkley-South Bulkley-Telkwa-Crawford-Dogtooth-East Purcell-Moyie-St. Mary-West Purcell-Brandywine-Garibaldi-Homathko-Powell River-Spearhead-Tantalus-North Shore-Sasquatch-Sky Pilot-Tetrahedron-Birkenhead-Coquihalla-Duffey-Harrison-Fraser-Manning-Skagit-South Chilcotin-Stein-Taseko-Badshot-Battle-Central Selkirk-Goat-Gold-Kokanee-North Okanagan-Retallack-Valhalla-Whatshan-Bull-Crowsnest North-Crowsnest South-Elkford East-Elkford West-East Island-North Island-South Island-West Island-Tutshi-Wheaton-White Pass East-White Pass West-Haines Pass",
+    "highlights": "<p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://avalanche.ca/early-season-conditions\">Avalanches hazard may exist where there is snow</a>. Pack a transceiver, shovel, and probe, and factor avalanches into your trip plan. Daily avalanche forecasts will begin November 26 at 4 PM.</p>",
+    "confidence": {
+      "rating": {
+        "value": "noRating",
+        "display": "No Rating"
+      }
+    },
+    "summaries": [
+      {
+        "type": {
+          "value": "weather-summary",
+          "display": "Weather Summary"
+        },
+        "content": " <p>More details can be found in the <a href =\"https://www.avalanche.ca/weather/forecast\">Mountain Weather Forecast</a>.</p>"
+      }
+    ],
+    "dangerRatings": [
+      {
+        "date": {
+          "value": "2025-10-02T23:00:00Z",
+          "display": "Thursday"
+        },
+        "ratings": {
+          "alp": {
+            "display": "Alpine",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "tln": {
+            "display": "Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "btl": {
+            "display": "Below Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          }
+        }
+      },
+      {
+        "date": {
+          "value": "2025-10-03T23:00:00Z",
+          "display": "Friday"
+        },
+        "ratings": {
+          "alp": {
+            "display": "Alpine",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "tln": {
+            "display": "Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "btl": {
+            "display": "Below Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          }
+        }
+      },
+      {
+        "date": {
+          "value": "2025-10-04T23:00:00Z",
+          "display": "Saturday"
+        },
+        "ratings": {
+          "alp": {
+            "display": "Alpine",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "tln": {
+            "display": "Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          },
+          "btl": {
+            "display": "Below Treeline",
+            "rating": {
+              "value": "earlyseason",
+              "display": "Early Season"
+            }
+          }
+        }
+      }
+    ],
+    "problems": [],
+    "terrainAndTravelAdvice": [],
+    "message": null,
+    "season": null,
+    "comment": null,
+    "isFullTranslation": false
+  },
+  "version": 1,
+  "owner": {
+    "value": "avalanche-canada",
+    "display": "Avalanche Canada",
+    "isExternal": false,
+    "url": "https://avalanche.ca/en"
+  },
+  "media": {
+    "images": []
+  }
+}
+]

@@ -1,0 +1,23 @@
+/* Custom CSS for the Avalanche Explorer */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+.container {
+    max-width: 900px;
+}
+/* Basic styling for the new LLM output section */
+.llm-summary-card {
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #e9f8ff; /* Light blue background */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.llm-summary-card p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+.hidden {
+    display: none !important;
+}
