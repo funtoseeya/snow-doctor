@@ -27,6 +27,134 @@ async function fetchWithRetry(url, options = {}, retries = 3) {
 }
 
 
+// --- Rendering Helpers ---
+
+/**
+ * Maps danger rating display strings to Tailwind color and background classes.
+ * @param {string} dangerRating - e.g., "3 - Considerable", "2 - Moderate", "Early Season"
+ * @returns {Object} { textClass, bgClass }
+ */
+function getRatingColorStyles(dangerRating) {
+    const rating = dangerRating.toUpperCase();
+    if (rating.includes('HIGH')) return { textClass: 'text-white', bgClass: 'bg-red-700' };
+    if (rating.includes('CONSIDERABLE')) return { textClass: 'text-white', bgClass: 'bg-orange-500' };
+    if (rating.includes('MODERATE')) return { textClass: 'text-white', bgClass: 'bg-yellow-600' };
+    if (rating.includes('LOW')) return { textClass: 'text-white', bgClass: 'bg-green-600' };
+    if (rating.includes('EXTREME')) return { textClass: 'text-white', bgClass: 'bg-black' };
+    
+    // Default for N/A or Early Season
+    return { textClass: 'text-gray-700', bgClass: 'bg-gray-200' };
+}
+
+/**
+ * Renders the multi-day danger ratings in a responsive table.
+ * @param {Array} dailyRatings
+ * @returns {string} HTML string
+ */
+function renderDangerRatings(dailyRatings) {
+    if (dailyRatings.length === 0) {
+        return `<p class="text-gray-500 italic">No multi-day danger ratings available.</p>`;
+    }
+
+    const header = dailyRatings.map(day => `
+        <th class="p-4 text-center text-sm font-semibold border-b border-gray-300 bg-gray-50">${day.dateDisplay}</th>
+    `).join('');
+
+    // Function to generate the HTML for a specific elevation row
+    const renderElevationRow = (elevationKey, label) => {
+        const ratings = dailyRatings.map(day => {
+            const rating = day[elevationKey];
+            const { textClass, bgClass } = getRatingColorStyles(rating);
+            return `
+                <td class="p-2 sm:p-4 text-center text-sm border-b border-gray-200">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold ${textClass} ${bgClass}">
+                        ${rating}
+                    </span>
+                </td>
+            `;
+        }).join('');
+        
+        return `
+            <tr>
+                <th class="p-2 sm:p-4 text-left font-semibold text-gray-700 bg-gray-50 border-r border-gray-200">${label}</th>
+                ${ratings}
+            </tr>
+        `;
+    };
+
+    return `
+        <div class="overflow-x-auto shadow-lg rounded-lg mb-8">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="p-4 text-left text-sm font-semibold text-gray-700 border-b border-gray-300 border-r">Elevation</th>
+                        ${header}
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    ${renderElevationRow('dangerAlpine', 'Alpine (Above Treeline)')}
+                    ${renderElevationRow('dangerTreeline', 'Treeline')}
+                    ${renderElevationRow('dangerBelowTreeline', 'Below Treeline')}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+/**
+ * Renders the detailed avalanche problems in collapsible cards.
+ * @param {Array} problems
+ * @returns {string} HTML string
+ */
+function renderAvalancheProblems(problems) {
+    if (problems.length === 0) {
+        return `<p class="text-gray-500 italic">No specific avalanche problems are currently reported.</p>`;
+    }
+
+    const problemCards = problems.map((problem, index) => {
+        return `
+            <div class="problem-card bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-4">
+                <h4 class="text-xl font-bold mb-3 text-red-700">${problem.type}</h4>
+                <p class="text-gray-700 mb-4 text-sm">${problem.comment}</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm border-t pt-3">
+                    <div class="p-2 bg-red-50 rounded-lg"><p class="font-medium text-gray-600">Likelihood</p><p class="font-bold">${problem.likelihood}</p></div>
+                    <div class="p-2 bg-red-50 rounded-lg"><p class="font-medium text-gray-600">Expected Size</p><p class="font-bold">${problem.expectedSize}</p></div>
+                    <div class="p-2 bg-red-50 rounded-lg"><p class="font-medium text-gray-600">Elevations</p><p class="font-bold">${problem.elevation || 'All Levels'}</p></div>
+                    <div class="p-2 bg-red-50 rounded-lg"><p class="font-medium text-gray-600">Aspects</p><p class="font-bold">${problem.aspect || 'All Aspects'}</p></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    return `
+        <div class="mt-6">
+            ${problemCards}
+        </div>
+    `;
+}
+
+/**
+ * Renders the terrain and travel advice.
+ * @param {Array} adviceList
+ * @returns {string} HTML string
+ */
+function renderTerrainAdvice(adviceList) {
+    if (adviceList.length === 0) {
+        return `<p class="text-gray-500 italic">No specific terrain and travel advice provided.</p>`;
+    }
+    
+    const listItems = adviceList.map(item => `
+        <li class="flex items-start mb-2">
+            <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="text-gray-700">${item}</span>
+        </li>
+    `).join('');
+
+    return `<ul class="list-none p-0 my-4">${listItems}</ul>`;
+}
+
+
 /**
  * Renders the cleaned data to the DOM.
  * This is the first step of rendering, showing the user the raw forecast.
@@ -34,7 +162,6 @@ async function fetchWithRetry(url, options = {}, retries = 3) {
  */
 function renderCleanedData(cleanedData) {
     
-    // FIX: Debug check for primary data structure to prevent "Cannot read properties of undefined" errors
     if (!cleanedData || !cleanedData.reportMetadata) {
         throw new Error("Critical: Cleaned data or report metadata is missing.");
     }
@@ -56,61 +183,60 @@ function renderCleanedData(cleanedData) {
         llmContainer.innerHTML = '';
     }
 
-    // --- Render Report Metadata ---
+    // --- 1. Render Report Metadata ---
     const metadata = cleanedData.reportMetadata;
-    
-    // FIX DEBUG ISSUE: Ensures the date fields are not null/undefined before passing to Date()
     const issuedDate = metadata.dateIssued ? new Date(metadata.dateIssued).toLocaleDateString() : 'N/A';
     const validUntilDate = metadata.validUntil ? new Date(metadata.validUntil).toLocaleDateString() : 'N/A';
 
     const metadataHtml = `
-        <h3 class="text-xl font-semibold mb-3 pt-4 border-t">Report Metadata</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm mb-6">
-            <div class="bg-gray-100 p-3 rounded-lg"><p class="font-medium text-gray-600">Forecaster</p><p class="font-bold">${metadata.forecaster}</p></div>
-            <div class="bg-gray-100 p-3 rounded-lg"><p class="font-medium text-gray-600">Confidence</p><p class="font-bold">${metadata.confidence}</p></div>
-            <div class="bg-gray-100 p-3 rounded-lg"><p class="font-medium text-gray-600">Issued</p><p>${issuedDate}</p></div>
-            <div class="bg-gray-100 p-3 rounded-lg"><p class="font-medium text-gray-600">Valid Until</p><p>${validUntilDate}</p></div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm mb-6 bg-gray-100 p-4 rounded-xl shadow-inner">
+            <div class="p-1"><p class="font-medium text-gray-600">Forecaster</p><p class="font-bold text-lg">${metadata.forecaster}</p></div>
+            <div class="p-1"><p class="font-medium text-gray-600">Confidence</p><p class="font-bold text-lg">${metadata.confidence}</p></div>
+            <div class="p-1"><p class="font-medium text-gray-600">Issued</p><p>${issuedDate}</p></div>
+            <div class="p-1"><p class="font-medium text-gray-600">Valid Until</p><p>${validUntilDate}</p></div>
         </div>
     `;
 
-    // --- Render Daily Danger Ratings (Multi-Day) ---
-    const dangerCards = cleanedData.dailyRatings.map(day => {
-        // Function to assign a color class based on the danger level
-        const getColorClass = (danger) => {
-            if (danger.toUpperCase() === 'HIGH') return 'text-red-600';
-            if (danger.toUpperCase() === 'CONSIDERABLE') return 'text-orange-500';
-            if (danger.toUpperCase() === 'MODERATE') return 'text-yellow-600';
-            if (danger.toUpperCase() === 'LOW') return 'text-green-600';
-            return 'text-gray-500';
-        };
+    // --- 2. Assemble All Sections ---
+    const dataOutputHtml = `
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">${cleanedData.areaName} Forecast Details</h2>
+        
+        ${metadataHtml}
+        
+        <!-- Danger Ratings Table -->
+        <h3 class="text-xl font-semibold mb-3 pt-4 border-t-2 border-primary-500">Multi-Day Danger Ratings</h3>
+        ${renderDangerRatings(cleanedData.dailyRatings)}
 
-        return `
-            <div class="p-4 bg-white rounded-lg shadow-md flex-1 min-w-[200px] border border-gray-200">
-                <h4 class="text-lg font-bold mb-3 text-center text-primary-600">${day.dateDisplay}</h4>
-                <div class="space-y-2">
-                    <div class="flex justify-between items-center text-sm"><span class="font-medium text-gray-600">Alpine:</span> <span class="text-base font-semibold ${getColorClass(day.dangerAlpine)}">${day.dangerAlpine}</span></div>
-                    <div class="flex justify-between items-center text-sm"><span class="font-medium text-gray-600">Treeline:</span> <span class="text-base font-semibold ${getColorClass(day.dangerTreeline)}">${day.dangerTreeline}</span></div>
-                    <div class="flex justify-between items-center text-sm"><span class="font-medium text-gray-600">Below Treeline:</span> <span class="text-base font-semibold ${getColorClass(day.dangerBelowTreeline)}">${day.dangerBelowTreeline}</span></div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Overall Summary Card -->
+            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 shadow-sm">
+                <h4 class="text-lg font-bold mb-2 text-blue-700">Overall Summary</h4>
+                <p class="text-gray-700 text-sm">${cleanedData.summary}</p>
             </div>
-        `;
-    }).join('');
+            
+            <!-- Weather Summary Card -->
+            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-sm">
+                <h4 class="text-lg font-bold mb-2 text-gray-700">Weather Summary</h4>
+                <p class="text-gray-700 text-sm">${cleanedData.weatherSummary}</p>
+            </div>
+        </div>
 
+        <!-- Avalanche Problems -->
+        <h3 class="text-xl font-semibold mb-3 pt-4 border-t-2 border-red-500">Active Avalanche Problems (${cleanedData.avalancheProblems.length})</h3>
+        ${renderAvalancheProblems(cleanedData.avalancheProblems)}
+
+        <!-- Terrain & Travel Advice -->
+        <h3 class="text-xl font-semibold mb-3 pt-4 border-t-2 border-green-500">Terrain & Travel Advice</h3>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200 shadow-sm">
+            ${renderTerrainAdvice(cleanedData.terrainAdvice)}
+        </div>
+    `;
 
     if (dataContainer) {
-        dataContainer.innerHTML = metadataHtml + `
-            <h3 class="text-xl font-semibold mb-3">Overall Summary</h3>
-            <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-6">
-                <p class="text-gray-700">${cleanedData.summary}</p>
-            </div>
-
-            <h3 class="text-xl font-semibold mb-3">Multi-Day Danger Ratings</h3>
-            <div class="flex flex-wrap gap-4 justify-start">
-                ${dangerCards}
-            </div>
-        `;
+        dataContainer.innerHTML = dataOutputHtml;
     }
 }
+
 
 /**
  * Renders the LLM output to the DOM.
@@ -131,14 +257,14 @@ function renderLlmSummary(llmSummary, areaName) {
     if (llmContainer) {
         // Simple markdown to HTML conversion for strong emphasis (**) and newlines
         const formattedSummary = llmSummary
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-red-700 font-extrabold">$1</strong>')
             .split('\n')
-            .map(p => p.trim() ? `<p>${p}</p>` : '')
+            .map(p => p.trim() ? `<p class="mb-3">${p}</p>` : '')
             .join('');
 
         llmContainer.innerHTML = `
-            <h2 class="text-2xl font-semibold mb-3 text-gray-800">${areaName} Safety Briefing</h2>
-            <div class="llm-summary-card">
+            <h2 class="text-3xl font-bold mb-4 text-blue-800 border-b pb-2">${areaName} Safety Briefing (AI-Generated)</h2>
+            <div class="llm-summary-card bg-white p-6 rounded-xl shadow-lg border border-blue-100 text-gray-800">
                 ${formattedSummary}
             </div>
         `;
@@ -212,6 +338,9 @@ async function fetchDataAndProcess() {
     try {
         console.log(`2. Requesting LLM Summary from: ${LLM_API_URL}`);
         
+        // Ensure the loading state is visible again for the LLM call
+        document.getElementById('loading-state').classList.remove('hidden');
+
         const llmResponse = await fetchWithRetry(LLM_API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

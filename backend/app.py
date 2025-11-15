@@ -20,10 +20,17 @@ app = Flask(__name__, template_folder='../frontend', static_folder='../frontend'
 
 # --- Utility Functions ---
 
+def _clean_html(raw_html):
+    """Removes HTML tags and multiple newlines/spaces from content."""
+    # Remove HTML tags
+    cleaned = re.sub('<[^<]+?>', '', raw_html).strip()
+    # Replace multiple newlines with single spaces for a cleaner look in the summary
+    return re.sub(r'\s+', ' ', cleaned)
+
 def _process_raw_data(raw_data):
     """
-    Cleans and extracts all relevant forecast data points, including multi-day ratings
-    and report metadata, into a single structured object.
+    Cleans and extracts all relevant forecast data points, including multi-day ratings,
+    problems, summaries, and advice, into a single structured object.
     """
     if not raw_data:
         return None
@@ -37,7 +44,7 @@ def _process_raw_data(raw_data):
     if not report:
         return None
 
-    # 1. Report Metadata (Ensuring missing dates are None, which JS handles defensively)
+    # 1. Report Metadata
     report_metadata = {
         'forecaster': report.get('forecaster', 'N/A'),
         'dateIssued': report.get('dateIssued', None), 
@@ -48,19 +55,29 @@ def _process_raw_data(raw_data):
     # 2. Area Name
     area_name = current_forecast.get('area', {}).get('name', 'Avalanche Area')
 
-    # 3. Summary (clean HTML from highlights)
-    highlights_html = report.get('highlights', 'No summary provided.')
-    summary_text = re.sub('<[^<]+?>', '', highlights_html).strip() 
-    
-    # 4. Daily Danger Ratings (Array of up to 3 days)
+    # 3. Overall Summary (clean HTML from highlights)
+    highlights_html = report.get('highlights', 'No overall summary provided.')
+    summary_text = _clean_html(highlights_html) 
+
+    # 4. Weather Summary
+    weather_summary = 'No specific weather summary provided.'
+    for summary in report.get('summaries', []):
+        if summary.get('type', {}).get('value') == 'weather-summary':
+            weather_summary = _clean_html(summary.get('content', ''))
+            break
+
+    # 5. Terrain and Travel Advice
+    terrain_advice = report.get('terrainAndTravelAdvice', [])
+
+    # 6. Daily Danger Ratings
     daily_ratings = []
-    
     for day_data in report.get('dangerRatings', []):
-        # We access 'display' which should be a string, or 'N/A' default
         forecast_date = day_data.get('date', {}).get('display', 'N/A')
         ratings = day_data.get('ratings', {})
         
         def get_rating_display(key, default='N/A'):
+            # The display field often includes the number (e.g., "3 - Considerable"),
+            # so we use that display for better information.
             return ratings.get(key, {}).get('rating', {}).get('display', default)
 
         daily_ratings.append({
@@ -70,12 +87,33 @@ def _process_raw_data(raw_data):
             'dangerBelowTreeline': get_rating_display('btl'),
         })
 
+    # 7. Avalanche Problems (Detailed extraction)
+    avalanche_problems = []
+    for problem in report.get('problems', []):
+        problem_data = problem.get('data', {})
+        
+        # Extract basic data and clean comment
+        problem_item = {
+            'type': problem.get('type', {}).get('display', 'Unknown Problem'),
+            'comment': _clean_html(problem.get('comment', 'No specific details provided.')),
+            'elevation': ', '.join([e.get('display', '') for e in problem_data.get('elevations', [])]),
+            'aspect': ', '.join([a.get('display', '') for a in problem_data.get('aspects', [])]),
+            'likelihood': problem_data.get('likelihood', {}).get('display', 'N/A'),
+            # Size is typically a min/max value we combine here
+            'expectedSize': f"Size {problem_data.get('expectedSize', {}).get('min', 'N/A')} to {problem_data.get('expectedSize', {}).get('max', 'N/A')}",
+        }
+        avalanche_problems.append(problem_item)
+
+
     # Compile the final cleaned data object
     cleaned_data = {
         'reportMetadata': report_metadata,
         'summary': summary_text,
+        'weatherSummary': weather_summary,
+        'terrainAdvice': terrain_advice,
         'areaName': area_name,
-        'dailyRatings': daily_ratings
+        'dailyRatings': daily_ratings,
+        'avalancheProblems': avalanche_problems,
     }
 
     return cleaned_data
@@ -83,10 +121,11 @@ def _process_raw_data(raw_data):
 def _make_gemini_call(cleaned_data):
     """Calls the Gemini API from the backend and returns the safety briefing."""
     
+    # We pass the full, rich cleaned data to the LLM to generate a better summary
     user_query = f"""You are a professional avalanche forecaster. Provide a concise, three-paragraph safety briefing for the forecast area.
-1. The first paragraph must summarize the overall **current** risk and mention the **Forecaster** and their **Confidence**.
-2. The second paragraph must recommend specific travel safety measures based on the danger levels for the **first day**.
-3. The third paragraph must comment on the outlook or change in danger for the **subsequent days**, mentioning the primary dangers for days 2 and 3 if they differ significantly from day 1.
+1. The first paragraph must summarize the overall **current** risk, mention the **Forecaster** and their **Confidence**, and integrate the **Overall Summary**.
+2. The second paragraph must recommend specific travel safety measures based on the danger levels for the **first day** and address the primary **Avalanche Problems** and **Terrain Advice**.
+3. The third paragraph must comment on the outlook or change in danger for the **subsequent days**, using the provided multi-day ratings and weather summary if available.
 
 Here is the cleaned, multi-day data: {json.dumps(cleaned_data)}"""
     
