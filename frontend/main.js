@@ -199,7 +199,7 @@ function renderCleanedData(cleanedData) {
 
     // --- 2. Assemble All Sections ---
     const dataOutputHtml = `
-        <h2 class="text-2xl font-bold mb-6 text-gray-800">${cleanedData.areaName} Forecast Details</h2>
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Forecast Details</h2>
         
         ${metadataHtml}
         
@@ -263,7 +263,7 @@ function renderLlmSummary(llmSummary, areaName) {
             .join('');
 
         llmContainer.innerHTML = `
-            <h2 class="text-3xl font-bold mb-4 text-blue-800 border-b pb-2">${areaName} Safety Briefing (AI-Generated)</h2>
+            <h2 class="text-3xl font-bold mb-4 text-blue-800 border-b pb-2">Whistler Safety Briefing</h2>
             <div class="llm-summary-card bg-white p-6 rounded-xl shadow-lg border border-blue-100 text-gray-800">
                 ${formattedSummary}
             </div>
